@@ -1,0 +1,147 @@
+.goda {
+
+  &-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url(../img/goda-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  &__period {
+    width: 580px;
+    padding-left: 170px;
+
+    &_item {
+      cursor: pointer;
+      position: relative;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      font-size: 40px;
+      font-family: "Acrom";
+      color: rgb(181, 127, 100);
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: right;
+      left: 0;
+      transition: all ease .4s;
+      @include breakpoint(md) {
+        &:hover {
+          left: 50px;
+        }
+      }
+
+      &.active {
+        left: 50px;
+      }
+
+      & img {
+        position: absolute;
+        right: 470px;
+      }
+    }
+  }
+
+  &__period-description {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+
+    &_item {
+      display: none;
+      background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
+      width: 50vw;
+      padding: 20px 40px;
+
+      &.active {
+        display: block;
+      }
+
+      & h2 {
+        font-size: 90px;
+        font-family: "BravoSC";
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      & p {
+        font-size: 30px;
+        font-family: "Acrom";
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      & > button {
+        cursor: pointer;
+        font-family: "BravoSC";
+        font-size: 24px;
+        color: #212121;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        display: block;
+        margin: 10px auto;
+        text-decoration: underline;
+        @include breakpoint(md) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &_themes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
+
+      & > button {
+        width: 100px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-family: "BravoSC";
+        color: #fff;
+        font-size: 32px;
+        padding: 0;
+        transition: all ease .3s;
+        @include breakpoint(md) {
+          &:hover {
+            padding-left: 10px;
+          }
+        }
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        & a {
+          font-family: "BravoSC";
+          color: #fff;
+          font-size: 32px;
+          padding: 15px 0;
+          text-align: center;
+          text-decoration: none;
+          @include breakpoint(md) {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "NewGulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Misha",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "compass-importer": "^0.4.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-flatten": "^0.3.1",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-twig": "^1.1.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-watch": "^4.3.11",
+    "gulp.spritesmith": "^6.5.1",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.0.1"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
