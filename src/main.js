@@ -1,7 +1,6 @@
 import './libs/other-libs/bootstrap-grid.css'
 import './libs/other-libs/reset.css'
 
-import './js/base'
 import './js/goda-page'
 import './js/history-page'
 import './js/home-page'
