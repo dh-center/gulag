@@ -1,0 +1,15 @@
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
