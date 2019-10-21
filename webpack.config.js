@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pages = [
   'index',
   'history-page',
-  'goda-page',
+  'years-page',
   'victims-page'
 ];
 
