@@ -1,4 +1,3 @@
-@import url(//db.onlinewebfonts.com/c/1a0273af001757ae1eb4cfcc3ecf673e?family=BravoSCT);
 /*!
  * Bootstrap Grid v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11,8 +10,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .link{display:block;width:100%;height:100%;text-decoration:inherit;color:inherit;cursor:pointer}.link:hover,.link:active,.link:focus{text-decoration:none;color:inherit}
 
 .goda-wrap{width:100%;height:100%;min-height:100vh;background-image:url("./img/goda-bg.jpg");background-repeat:no-repeat;background-size:cover;overflow:hidden;display:flex;align-items:center}.goda__period{width:580px;padding-left:170px}.goda__period_item{cursor:pointer;position:relative;height:90px;display:flex;align-items:center;font-size:40px;font-family:"Acrom";color:#b57f64;font-weight:bold;line-height:1.2;text-align:right;left:0;transition:all ease .4s}@media (min-width: 1025px){.goda__period_item:hover{left:50px}}.goda__period_item.active{left:50px}.goda__period_item img{position:absolute;right:470px}.goda__period-description{position:fixed;top:50%;transform:translateY(-50%);right:30px}.goda__period-description_item{display:none;background:linear-gradient(to bottom, #ad6751 0%, #b58364 42%, #bd9f77 94%);width:50vw;padding:20px 40px}.goda__period-description_item.active{display:block}.goda__period-description_item h2{font-size:90px;font-family:"BravoSC";color:#fff;line-height:1.2}.goda__period-description_item p{font-size:30px;font-family:"Acrom";color:#fff;line-height:1.2}.goda__period-description_item>button{cursor:pointer;font-family:"BravoSC";font-size:24px;color:#212121;background-color:transparent;border:none;text-align:center;display:block;margin:10px auto;text-decoration:underline}@media (min-width: 1025px){.goda__period-description_item>button:hover{text-decoration:none}}.goda__period-description_themes{position:absolute;top:0;left:0;display:none;z-index:1;width:100%;height:100%;background:linear-gradient(to bottom, #ad6751 0%, #b58364 42%, #bd9f77 94%)}.goda__period-description_themes>button{width:100px;margin-bottom:30px;cursor:pointer;background-color:transparent;border:none;font-family:"BravoSC";color:#fff;font-size:32px;padding:0;transition:all ease .3s}@media (min-width: 1025px){.goda__period-description_themes>button:hover{padding-left:10px}}.goda__period-description_themes>div{display:flex;flex-direction:column}.goda__period-description_themes>div a{font-family:"BravoSC";color:#fff;font-size:32px;padding:15px 0;text-align:center;text-decoration:none}@media (min-width: 1025px){.goda__period-description_themes>div a:hover{text-decoration:underline}}
-
-
 
 @font-face {
 	font-family: 'BravoSC';
