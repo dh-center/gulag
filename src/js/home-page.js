@@ -3,7 +3,7 @@ function fillDiv() {
   var currentWidth = div.outerWidth() + 3;
   var availableWidth = div.parent().outerWidth();
   if (availableWidth > 1000) {
-    var availableWidth = 1000;
+    availableWidth = 1000;
   }
   var scale = availableWidth / currentWidth;
 

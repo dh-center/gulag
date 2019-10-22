@@ -1,9 +1,1 @@
-@font-face {
-  font-family: 'BravoSCT';
-  src: url('../fonts/BravoSCT/BravoSCT.woff2') format('woff2'),
-  url('../fonts/BravoSCT/BravoSCT.woff') format('woff'),
-  url('../fonts/BravoSCT/BravoSCT.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+@import url(//db.onlinewebfonts.com/c/1a0273af001757ae1eb4cfcc3ecf673e?family=BravoSCT);

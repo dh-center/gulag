@@ -1,21 +1,21 @@
 @font-face {
 	font-family: 'BravoSC';
-	src: url('../fonts/Bravo/BravoSC.eot');
+	src: url('./fonts/Bravo/BravoSC.eot');
 	src: local('BravoSC'),
-		url('../fonts/Bravo/BravoSC.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/Bravo/BravoSC.woff') format('woff'),
-		url('../fonts/Bravo/BravoSC.ttf') format('truetype');
+		url('./fonts/Bravo/BravoSC.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/Bravo/BravoSC.woff') format('woff'),
+		url('./fonts/Bravo/BravoSC.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'BravoRG';
-	src: url('../fonts/Bravo/BravoRG.eot');
+	src: url('./fonts/Bravo/BravoRG.eot');
 	src: local('BravoRG'),
-		url('../fonts/Bravo/BravoRG.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/Bravo/BravoRG.woff') format('woff'),
-		url('../fonts/Bravo/BravoRG.ttf') format('truetype');
+		url('./fonts/Bravo/BravoRG.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/Bravo/BravoRG.woff') format('woff'),
+		url('./fonts/Bravo/BravoRG.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }

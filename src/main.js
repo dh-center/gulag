@@ -3,7 +3,7 @@ import './libs/other-libs/reset.css'
 
 import './js/years-page'
 import './js/history-page'
-import './js/home-page'
+// import './js/home-page'
 import './js/victims-page'
 
 import './styles/link.scss'
