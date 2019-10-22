@@ -15,12 +15,13 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 200px;
+    margin-bottom: 75px;
   }
 
   &__title {
     display: inline-block;
-    height: 100px;
+    margin-top: 75px;
+    width: 70%;
   }
 
   &__wrap {
