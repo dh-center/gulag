@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pages = [
   'index',
   'history-page',
-  'goda-page',
+  'years-page',
   'victims-page'
 ];
 
@@ -54,7 +54,14 @@ module.exports = {
       {
         from: './src/img/**/*',
         to: './img/[name].[ext]',
-        test: /\.(png|jpg|gif|svg|woff|woff2|ttf|eot)$/
+        test: /\.(png|jpg|gif)$/
+      }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: './src/fonts/',
+        to: './fonts/',
+        test: /\.(svg|woff|woff2|ttf|eot)$/
       }
     ])
   ]

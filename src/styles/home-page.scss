@@ -15,17 +15,13 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 200px;
+    margin-bottom: 75px;
   }
 
   &__title {
     display: inline-block;
-    font-family: 'BravoSCT';
-    font-size: 16px;
-    text-transform: uppercase;
-    background: linear-gradient(to bottom, #bb9572, #ae6450);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-top: 75px;
+    width: 70%;
   }
 
   &__wrap {
@@ -77,11 +73,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'BravoSCT';
-        font-size: calc(100vw / 10);
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #212121;
+
+        img {
+          position: relative;
+          width: 95%;
+        }
       }
     }
   }
