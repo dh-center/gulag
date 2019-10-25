@@ -1,18 +1,25 @@
-$('.goda__period_item').on('click', function () {
-  $('.goda__period_item').removeClass('active');
-  $(this).addClass('active');
+const periodsListActiveClass = 'periods-page__periods-list-item--active';
+const periodsDescriptionItemActiveClass = 'periods-page__period-description-item--active';
 
-  var period = $(this).attr('id');
-  console.log(period);
+/**
+ * Change active section on click on period item
+ */
+$('.periods-page__periods-list-item').on('click', function () {
+  $('.periods-page__periods-list-item').removeClass(periodsListActiveClass);
+  $(this).addClass(periodsListActiveClass);
 
-  $('.goda__period-description_item').removeClass('active');
+  const period = $(this).attr('id');
+  console.log(period)
+  $('.periods-page__period-description-item').removeClass(periodsDescriptionItemActiveClass);
 
-  $(".goda__period-description").find("[for='" + period + "']").addClass('active');
+  console.log($('.periods-page__period-description-item').find(`[for='${period}']`))
+  $(`.periods-page__period-description-item[for="${period}"]`).addClass(periodsDescriptionItemActiveClass);
 });
 
-$('.goda__period-description_item > button').on('click', function () {
-  $('.goda__period-description_themes').show();
-});
-$('.goda__period-description_themes > button').on('click', function () {
-  $('.goda__period-description_themes').hide();
-});
+// $('.years__period-description_item > button').on('click', function () {
+//   $('.years__period-description_themes').show();
+// });
+
+// $('.years__period-description_themes > button').on('click', function () {
+//   $('.years__period-description_themes').hide();
+// });
