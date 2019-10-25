@@ -1,11 +1,11 @@
 import 'slick-carousel'
 
-$('.victims__slider').slick({
+$('.victims-page__slider').slick({
   swipe: true,
   arrows: true,
   infinite: true,
   autoplay: true,
-  autoplaySpeed: 300,
+  autoplaySpeed: 2000,
   speed: 800,
   slidesToShow: 3,
   swipeToSlide: true,

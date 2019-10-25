@@ -1,17 +1,12 @@
-@import "../libs/mixins/bootstrap-breakpoint";
-
-.victims {
-
-  &-wrap {
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url('./img/victims-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    vertical-align: middle;
-  }
+.victims-page {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-image: url('./img/victims-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  vertical-align: middle;
 
   &__slider-wrap {
     height: 100vh;
@@ -20,78 +15,49 @@
     flex-direction: column;
   }
 
-  &__slider {
+  &__slider-item-name {
+    display: block;
+    background-color: #af6753;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 318px;
+    height: 185px;
+    padding: 0 10px;
+    font-size: 50px;
+    font-family: "BravoSC";
+    color: #fff;
+    line-height: 1.2;
+    text-align: right;
+    word-spacing: 100px;
+  }
 
-    & * {
-      outline: none;
-    }
 
-    & .slick-list {
-      overflow: visible;
-    }
+  img#{&}__slider-item-background {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    height: 120%;
+    transform: translateY(-50%) translateX(55px);
+    z-index: -1;
+  }
 
-    & .slick-track {
-      display: flex;
-      align-items: center;
-    }
+  &__slider-item {
+    position: relative;
 
-    & .slick-slide {
-      margin: 0 2vw;
-    }
-
-    &_item {
-      @include breakpoint(md) {
-        &:hover {
-          & div {
-            display: block;
-          }
-
-          & span {
-            display: block;
-          }
-        }
-      }
-
-      & div {
+    &:hover {
+      img.victims-page__slider-item-background {
         display: block;
-        background-color: #af6753;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        width: 318px;
-        height: 185px;
-        padding: 0 10px;
-        font-size: 50px;
-        font-family: "BravoSC";
-        color: #fff;
-        line-height: 1.2;
-        text-align: right;
-        word-spacing: 100px;
-        @include breakpoint(md) {
-          display: none;
-        }
-      }
-
-      & span {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        width: calc(100% + 30px);
-        height: calc(100% + 30px);
-        @include breakpoint(md) {
-          display: none;
-          width: calc(100% + 120px);
-          height: calc(100% + 120px);
-        }
-
-        & img {
-          width: 100%;
-          height: 100%;
-        }
       }
     }
   }
+}
+
+.slick-slide {
+  margin: 0 40px;
+}
+
+.slick-list {
+  overflow: visible;
 }
