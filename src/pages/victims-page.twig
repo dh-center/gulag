@@ -1,27 +1,21 @@
 {% extends './layout.twig' %}
 
 {% block content %}
-  <div class="container-fluid">
-    <div class="row">
-      <main class="victims-wrap">
-        <div class="victims__slider-wrap">
-          <div class="victims__slider">
-            {% for item in 1..5 %}
-              <div class="victims__slider_item">
-                <a href="#">
-                  <img src="img/victim-{{ item }}.png" alt="">
-                  <div>
-                    Нагинская Фрина Иоилевна
-                  </div>
-                  <span>
-                                        <img src="img/victim-bg.png" alt="">
-                                    </span>
-                </a>
+  <main class="victims-page">
+    <div class="victims-page__slider-wrap">
+      <div class="victims-page__slider">
+        {% for item in 1..5 %}
+          <div class="victims-page__slider-item">
+            <a href="#">
+              <img src="img/victim-{{ item }}.png" alt="">
+              <div class="victims-page__slider-item-name">
+                Нагинская Фрина Иоилевна
               </div>
-            {% endfor %}
+              <img src="img/victim-bg.png" class="victims-page__slider-item-background">
+            </a>
           </div>
-        </div>
-      </main>
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </main>
 {% endblock %}

@@ -1,27 +1,26 @@
 {% extends './layout.twig' %}
 
 {% block content %}
-  <main class="home-wrap">
-    <div class="home__title-wrap">
-      <img src="img/index_title.png" alt="" class="home__title">
+  <main class="home-page">
+    <div class="home-page__title-wrap">
+      <img src="img/index_title.png" alt="">
     </div>
-    <div class="home__wrap">
-      <div class="home__block">
-        <img src="img/home-block-1.jpg" alt="">
-        <div class="home__block_link">
-          <a href="years-page.html" class="link">
-            <img src="img/index_system.png" alt="">
-          </a>
-        </div>
+    <div class="home-page__sections-wrap">
+      <div class="home-page__section-item">
+        <a href="periods-page.html">
+          <img src="img/home-block-1.jpg">
+          <div class="home-page__section-item-text">
+            <img src="img/index_system.png">
+          </div>
+        </a>
       </div>
-      <div class="home__block">
-        <img src="img/home-block-2.jpg" alt="">
-        <div class="home__block_link">
-          <a href="victims-page.html" class="link">
-            <img src="img/index_victims.png" alt="">
-          </a>
-        </div>
+      <div class="home-page__section-item">
+        <a href="victims-page.html">
+          <img src="img/home-block-2.jpg">
+          <div class="home-page__section-item-text">
+            <img src="img/index_victims.png">
+          </div>
+        </a>
       </div>
-    </div>
   </main>
 {% endblock %}

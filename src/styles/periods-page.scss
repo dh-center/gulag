@@ -1,0 +1,73 @@
+.periods-page {
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/years-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-position: center center;
+
+  &__periods-list {
+    padding-left: 170px;
+  }
+
+  &__periods-list-item {
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 40px;
+    font-family: "Acrom";
+    color: #b57f64;
+    font-weight: bold;
+    left: 0;
+    transition: all ease .4s;
+
+    &--active,
+    &:hover {
+      left: 50px;
+    }
+
+    & img {
+      position: absolute;
+      right: 290px;
+    }
+  }
+
+
+  &__periods-description-wrap {
+    max-height: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    padding: 60px 60px 60px 90px;
+    overflow: auto;
+  }
+
+  &__period-description-item {
+    padding: 20px 40px;
+    display: none;
+    background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
+
+    & h2 {
+      font-size: 90px;
+      font-family: "BravoSC";
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    & p {
+      font-size: 30px;
+      font-family: "Acrom";
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{% extends './layout.twig' %}
+
+
+
+{% block content %}
+  <main class="periods-page">
+    <ul class="periods-page__periods-list">
+      {% for index, item in periodsInfo %}
+        <li id="{{ index + 1 }}"
+          {% if index == 0 %}
+          class="periods-page__periods-list-item periods-page__periods-list-item--active"
+        {% else %}
+          class="periods-page__periods-list-item"
+          {% endif %}>
+          <img src="img/period-{{ index + 1 }}.png" alt="">
+          {{ item.years }}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="periods-page__periods-description-wrap">
+      {% for index, item in periodsInfo %}
+        <section
+          {% if index == 0 %}
+            class="periods-page__period-description-item periods-page__period-description-item--active"
+          {% else %}
+            class="periods-page__period-description-item"
+          {% endif %} for="{{ index + 1 }}">
+          <h2>
+            {{ item.name }}
+          </h2>
+          <p>
+            {{ item.description }}
+          </p>
+        </section>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}

@@ -3,11 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const periodsInfo = require('./src/content/periodsInfo');
 
 const pages = [
   'index',
   'history-page',
-  'years-page',
+  'periods-page',
   'victims-page'
 ];
 
@@ -43,7 +44,10 @@ module.exports = {
     ...pages.map(page => {
       return new HtmlWebpackPlugin({
         template: path.resolve(`./src/pages/${page}.twig`),
-        filename: path.resolve(`./dist/${page}.html`)
+        filename: path.resolve(`./dist/${page}.html`),
+        templateParameters: {
+          periodsInfo
+        }
       })
     }),
     new webpack.ProvidePlugin({

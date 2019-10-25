@@ -6,7 +6,7 @@ import './js/history-page'
 import './js/victims-page'
 
 import './styles/link.scss'
-import './styles/years-page.scss'
+import './styles/periods-page.scss'
 import './styles/history-page.scss'
 import './styles/home-page.scss'
 import './styles/victims-page.scss'
