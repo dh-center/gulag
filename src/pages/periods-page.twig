@@ -5,7 +5,7 @@
 {% block content %}
   <main class="periods-page">
     <ul class="periods-page__periods-list">
-      {% for index, item in years.years %}
+      {% for index, item in periodsInfo %}
         <li id="{{ index + 1 }}"
           {% if index == 0 %}
           class="periods-page__periods-list-item periods-page__periods-list-item--active"
@@ -18,7 +18,7 @@
       {% endfor %}
     </ul>
     <div class="periods-page__periods-description-wrap">
-      {% for index, item in years.years %}
+      {% for index, item in periodsInfo %}
         <section
           {% if index == 0 %}
             class="periods-page__period-description-item periods-page__period-description-item--active"

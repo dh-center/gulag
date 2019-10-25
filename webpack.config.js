@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const years = require('./src/content/years');
+const periodsInfo = require('./src/content/periodsInfo');
 
 const pages = [
   'index',
   'history-page',
-  'years-page',
+  'periods-page',
   'victims-page'
 ];
 
@@ -46,7 +46,7 @@ module.exports = {
         template: path.resolve(`./src/pages/${page}.twig`),
         filename: path.resolve(`./dist/${page}.html`),
         templateParameters: {
-          years
+          periodsInfo
         }
       })
     }),
