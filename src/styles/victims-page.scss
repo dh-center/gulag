@@ -1,19 +1,12 @@
 .victims-page {
-  width: 100%;
   height: 100%;
-  min-height: 100vh;
   background-image: url('./img/victims-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  vertical-align: middle;
-
-  &__slider-wrap {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   &__slider-arrow-left,
   &__slider-arrow-right {
@@ -36,13 +29,12 @@
 
 
   &__slider-item-name {
-    display: block;
+    display: none;
     background-color: #af6753;
     position: absolute;
     bottom: 10px;
     right: 10px;
     width: 318px;
-    height: 185px;
     padding: 0 10px;
     font-size: 50px;
     font-family: "BravoSC";
@@ -68,6 +60,10 @@
 
     &:hover {
       img.victims-page__slider-item-background {
+        display: block;
+      }
+
+      .victims-page__slider-item-name {
         display: block;
       }
     }
