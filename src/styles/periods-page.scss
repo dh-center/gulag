@@ -40,7 +40,10 @@
 
 
   &__periods-description-wrap {
-    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     max-width: 900px;
     margin-left: auto;
     padding: 60px 60px 60px 90px;
@@ -51,23 +54,50 @@
     padding: 20px 40px;
     display: none;
     background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
+    min-height: 90%;
 
     & h2 {
-      font-size: 90px;
+      font-size: 70px;
       font-family: "BravoSC";
       color: #fff;
       line-height: 1.2;
     }
 
     & p {
-      font-size: 30px;
+      font-size: 25px;
       font-family: "Acrom";
       color: #fff;
       line-height: 1.2;
     }
 
     &--active {
-      display: block;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__period-topics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: auto;
+
+    &-item {
+      margin: 15px 0;
+
+      & a {
+        padding: 14px 5px;
+        font-size: 20px;
+        font-family: "Acrom";
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
