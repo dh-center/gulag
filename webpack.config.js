@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 const periodsInfo = require('./src/content/periodsInfo');
 
 const pages = [
@@ -61,6 +63,14 @@ module.exports = {
         test: /\.(png|jpg|gif)$/
       }
     ]),
+    new ImageminPlugin({
+      test: /\.(png|jpg|gif)$/,
+      plugins: [
+        imageminMozjpeg({
+          quality: 95,
+          progressive: true
+        })
+      ]}),
     new CopyWebpackPlugin([
       {
         from: './src/fonts/',
