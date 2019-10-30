@@ -31,6 +31,13 @@
           <p>
             {{ item.description }}
           </p>
+          <ul class="periods-page__period-topics">
+            {% for topic in 1..5 %}
+              <li class="periods-page__period-topics-item">
+                <a href="#">Тема №{{ topic }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </section>
       {% endfor %}
     </div>
