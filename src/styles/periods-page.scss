@@ -41,10 +41,9 @@
 
   &__periods-description-wrap {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: stretch;
-    max-height: 100%;
-    min-height: 90%;
+    height: 100%;
     max-width: 900px;
     margin-left: auto;
     padding: 60px 60px 60px 90px;
@@ -55,6 +54,7 @@
     padding: 20px 40px;
     display: none;
     background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
+    min-height: 90%;
 
     & h2 {
       font-size: 70px;
@@ -81,7 +81,6 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
     margin-top: auto;
 
     &-item {
