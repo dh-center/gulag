@@ -5,6 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
+require('dotenv').config();
+
+const PUBLIC_PATH = process.env.PUBLIC_PATH || '';
 
 const contentDataset = {
   ru: {
@@ -35,7 +38,8 @@ function getPagesArray() {
         filename: page === 'index'? path.resolve(`./dist/${lang}/index.html`): path.resolve(`./dist/${lang}/${page}/index.html`),
         templateParameters: {
           ...contentDataset[lang],
-          lang
+          lang,
+          publicPath: PUBLIC_PATH
         }
       });
 
@@ -47,7 +51,8 @@ function getPagesArray() {
       filename: page === 'index'? path.resolve(`./dist/index.html`): path.resolve(`./dist/${page}/index.html`),
       templateParameters: {
         ...contentDataset.ru,
-        lang: 'ru'
+        lang: 'ru',
+        publicPath: PUBLIC_PATH
       }
     });
 
