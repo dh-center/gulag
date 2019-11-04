@@ -12,7 +12,7 @@
         {% else %}
           class="periods-page__periods-list-item"
           {% endif %}>
-          <img src="img/period-{{ index + 1 }}.png" alt="">
+          <img src="{{ publicPath }}/img/period-{{ index + 1 }}.png" alt="">
           {{ item.years }}
         </li>
       {% endfor %}
@@ -34,7 +34,7 @@
           <ul class="periods-page__period-topics">
             {% for topic in 1..5 %}
               <li class="periods-page__period-topics-item">
-                <a href="#">Тема №{{ topic }}</a>
+                <a href="#">{{dict.theme}} №{{ topic }}</a>
               </li>
             {% endfor %}
           </ul>
