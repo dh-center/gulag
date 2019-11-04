@@ -5,7 +5,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const periodsInfo = require('./src/content/periodsInfo');
+
+const contentDataset = {
+  ru: {
+    periodsInfo: require('./src/content/ru/periodsInfo'),
+    dict: require('./src/content/ru/dict')
+  },
+  en: {
+    periodsInfo: require('./src/content/en/periodsInfo'),
+    dict: require('./src/content/en/dict')
+  }
+};
 
 const pages = [
   'index',
@@ -13,6 +23,40 @@ const pages = [
   'periods-page',
   'victims-page'
 ];
+
+function getPagesArray() {
+  const result = [];
+
+  pages.forEach(page => {
+    Object.keys(contentDataset).forEach(lang => {
+
+      const pageConfig = new HtmlWebpackPlugin({
+        template: path.resolve(`./src/pages/${page}.twig`),
+        filename: page === 'index'? path.resolve(`./dist/${lang}/index.html`): path.resolve(`./dist/${lang}/${page}/index.html`),
+        templateParameters: {
+          ...contentDataset[lang],
+          lang
+        }
+      });
+
+      result.push(pageConfig)
+    });
+
+    const pageConfig = new HtmlWebpackPlugin({
+      template: path.resolve(`./src/pages/${page}.twig`),
+      filename: page === 'index'? path.resolve(`./dist/index.html`): path.resolve(`./dist/${page}/index.html`),
+      templateParameters: {
+        ...contentDataset.ru,
+        lang: 'ru'
+      }
+    });
+
+    result.push(pageConfig)
+  });
+
+  return result;
+}
+
 
 module.exports = {
   entry: './src/main.js',
@@ -43,15 +87,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css?h=[hash]'
     }),
-    ...pages.map(page => {
-      return new HtmlWebpackPlugin({
-        template: path.resolve(`./src/pages/${page}.twig`),
-        filename: path.resolve(`./dist/${page}.html`),
-        templateParameters: {
-          periodsInfo
-        }
-      })
-    }),
+    ...getPagesArray(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
@@ -70,7 +106,8 @@ module.exports = {
           quality: 95,
           progressive: true
         })
-      ]}),
+      ]
+    }),
     new CopyWebpackPlugin([
       {
         from: './src/fonts/',
