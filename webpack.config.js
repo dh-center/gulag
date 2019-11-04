@@ -95,7 +95,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './src/img/**/*',
-        to: './img/[name].[ext]',
+        to: './gulag/img/[name].[ext]',
         test: /\.(png|jpg|gif)$/
       }
     ]),
@@ -111,7 +111,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './src/fonts/',
-        to: './fonts/',
+        to: './gulag/fonts/',
         test: /\.(svg|woff|woff2|ttf|eot)$/
       }
     ])
