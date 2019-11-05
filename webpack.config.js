@@ -35,7 +35,7 @@ function getPagesArray() {
 
       const pageConfig = new HtmlWebpackPlugin({
         template: path.resolve(`./src/pages/${page}.twig`),
-        filename: page === 'index'? path.resolve(`./dist/${lang}/index.html`): path.resolve(`./dist/${lang}/${page}/index.html`),
+        filename: page === 'index' ? path.resolve(`./dist/${lang}/index.html`) : path.resolve(`./dist/${lang}/${page}/index.html`),
         templateParameters: {
           ...contentDataset[lang],
           lang,
@@ -48,7 +48,7 @@ function getPagesArray() {
 
     const pageConfig = new HtmlWebpackPlugin({
       template: path.resolve(`./src/pages/${page}.twig`),
-      filename: page === 'index'? path.resolve(`./dist/index.html`): path.resolve(`./dist/${page}/index.html`),
+      filename: page === 'index' ? path.resolve(`./dist/index.html`) : path.resolve(`./dist/${page}/index.html`),
       templateParameters: {
         ...contentDataset.ru,
         lang: 'ru',
@@ -63,32 +63,8 @@ function getPagesArray() {
 }
 
 
-module.exports = {
-  entry: './src/main.js',
-  module: {
-    rules: [
-      {
-        test: /\.twig$/,
-        loader: 'twig-loader'
-      },
-      {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              url: false
-            }
-          },
-          'sass-loader'
-        ]
-      }
-    ]
-  },
-
-  plugins: [
+module.exports = (env, args) => {
+  const plugins = [
     new MiniCssExtractPlugin({
       filename: '[name].css?h=[hash]'
     }),
@@ -99,20 +75,11 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: './src/img/**/*',
-        to: './img/[name].[ext]',
+        from: './src/img/',
+        to: './img/',
         test: /\.(png|jpg|gif)$/
       }
     ]),
-    new ImageminPlugin({
-      test: /\.(png|jpg|gif)$/,
-      plugins: [
-        imageminMozjpeg({
-          quality: 95,
-          progressive: true
-        })
-      ]
-    }),
     new CopyWebpackPlugin([
       {
         from: './src/fonts/',
@@ -120,5 +87,45 @@ module.exports = {
         test: /\.(svg|woff|woff2|ttf|eot)$/
       }
     ])
-  ]
+  ];
+
+  if (args.mode === 'production') {
+    plugins.push(new ImageminPlugin({
+      test: /\.(png|jpg|gif)$/,
+      plugins: [
+        imageminMozjpeg({
+          quality: 95,
+          progressive: true
+        })
+      ]
+    }))
+  }
+
+  return {
+    entry: './src/main.js',
+    module: {
+      rules: [
+        {
+          test: /\.twig$/,
+          loader: 'twig-loader'
+        },
+        {
+          test: /\.s?css$/,
+          exclude: /node_modules/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false
+              }
+            },
+            'sass-loader'
+          ]
+        }
+      ]
+    },
+
+    plugins
+  };
 };
