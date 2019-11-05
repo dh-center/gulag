@@ -75,8 +75,8 @@ module.exports = (env, args) => {
     }),
     new CopyWebpackPlugin([
       {
-        from: './src/img/**/*',
-        to: './img/[name].[ext]',
+        from: './src/img/',
+        to: './img/',
         test: /\.(png|jpg|gif)$/
       }
     ]),
