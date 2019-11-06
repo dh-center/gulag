@@ -1,7 +1,7 @@
 # build node-gyp modules in different stage
 FROM node:10-alpine as build-stage
 
-COPY .. .
+COPY . .
 
 RUN yarn
 RUN yarn build
