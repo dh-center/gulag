@@ -4,12 +4,6 @@ var a = true;
 
 $(window).bind('mousewheel', function (event) {
   if (event.originalEvent.wheelDelta <= 0 && a) {
-// $(".history__text_slide").animate({top: "55%",}, 200, function() {});
-// $(".history__text_slide").animate({top: "50%",}, 700, function() {});
-
-// $(".history__text_item > img").animate({top: "60%",}, 200, function() {});
-// $(".history__text_item > img").animate({top: "50%",}, 1000, function() {});
-
     a = false;
     var windowHeight = $(window).height();
     if (currentSlide <= 4 && currentSlide >= 1) {
@@ -35,11 +29,6 @@ $(window).bind('mousewheel', function (event) {
     }
 
   } else if (event.originalEvent.wheelDelta >= 0 && a) {
-// $(".history__text_slide").animate({top: "45%",}, 200, function() {});
-// $(".history__text_slide").animate({top: "50%",}, 700, function() {});
-
-// $(".history__text_item > img").animate({top: "40%",}, 200, function() {});
-// $(".history__text_item > img").animate({top: "50%",}, 1000, function() {});
 
     a = false;
     var windowHeight = $(window).height();
@@ -99,13 +88,13 @@ function fillP(forNumber) {
 var slideLength = $('.history__text_item').length;
 var i = 1;
 while (i <= slideLength) {
-  fillP(i);
+  // fillP(i);
   i++;
 }
 $(window).resize(function () {
   var j = 1;
   while (j <= slideLength) {
-    fillP(j);
+    // fillP(j);
     j++;
   }
 });
