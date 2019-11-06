@@ -1,8 +1,6 @@
 version: "3.2"
 services:
   gulag-prod:
-    build:
-      dockerfile: "Dockerfile"
-      context: .
+    build: .
     ports:
       - 8923:80
