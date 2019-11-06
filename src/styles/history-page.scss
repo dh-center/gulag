@@ -1,10 +1,8 @@
 @import "./base";
 
-.history {
-  &-wrap {
-    width: 100%;
-    height: 100vh;
-  }
+.history-page {
+  width: 100%;
+  height: 100vh;
 
   &__years {
     position: absolute;
@@ -16,7 +14,7 @@
     flex-direction: column;
     justify-content: space-around;
 
-    &:before {
+    &::before {
       position: absolute;
       top: 0;
       content: '';
@@ -24,32 +22,36 @@
       height: 100%;
       background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
     }
+  }
 
-    &_item {
-      position: relative;
-      padding-left: 30px;
-      font-family: "B52";
-      font-weight: 700;
-      font-size: 36px;
-      color: #ca9f75;
+  &__year-item {
+    position: relative;
+    padding-left: 30px;
+    font-family: "B52";
+    font-weight: 700;
+    font-size: 36px;
+    color: #ca9f75;
 
-      &:before {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -30px;
-        content: '';
-        width: 30px;
-        height: 18px;
-        background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
-      }
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -30px;
+      content: '';
+      width: 30px;
+      height: 18px;
+      background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
+    }
 
-      &.active {
-        font-family: 'BravoSC';
-        font-size: 50px;
-      }
+    &--active {
+      font-family: 'BravoSC';
+      font-size: 50px;
     }
   }
+}
+
+.history {
+
 
   &__text-wrap {
     width: 100%;

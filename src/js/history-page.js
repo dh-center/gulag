@@ -54,8 +54,8 @@ $(window).bind('mousewheel', function (event) {
     }
   }
 
-  $(".history__years_item").removeClass('active');
-  $(".history__years_item[id='" + currentSlide + "']").addClass('active');
+  $(".history-page__year-item").removeClass('history-page__year-item--active');
+  $(".history-page__year-item[id='" + currentSlide + "']").addClass('history-page__year-item--active');
 });
 
 
