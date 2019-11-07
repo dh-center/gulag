@@ -48,11 +48,22 @@
       font-size: 50px;
     }
   }
+
+  &__sliders-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .history {
-
-
   &__text-wrap {
     width: 100%;
     height: 100%;

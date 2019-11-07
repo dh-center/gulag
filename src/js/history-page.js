@@ -1,10 +1,10 @@
-var blocksCount = $('.history__text > div').length;
+var blocksCount = $('.history-page__sliders-wrap > div').length;
 var currentSlide = 1;
-var a = true;
+var isNotIdle = true;
 
 $(window).bind('mousewheel', function (event) {
-  if (event.originalEvent.wheelDelta <= 0 && a) {
-    a = false;
+  if (event.originalEvent.wheelDelta <= 0 && isNotIdle) {
+    isNotIdle = false;
     var windowHeight = $(window).height();
     if (currentSlide <= 4 && currentSlide >= 1) {
       $(".history__text_slide").animate({top: "55%",}, 200, function () {
@@ -12,45 +12,47 @@ $(window).bind('mousewheel', function (event) {
       $(".history__text_slide").animate({top: "50%",}, 700, function () {
       });
 
-      $(".history__text_item > img").animate({top: "60%",}, 200, function () {
+      $(".history-page__slide > img").animate({top: "60%",}, 200, function () {
       });
-      $(".history__text_item > img").animate({top: "50%",}, 1000, function () {
+      $(".history-page__slide > img").animate({top: "50%",}, 1000, function () {
       });
 
       currentSlide++;
       $(window).unbind('click');
-      $(".history__text").animate({
+      console.log(windowHeight)
+      $(".history-page__sliders-wrap").animate({
         top: "-=" + windowHeight + "",
       }, 700, function () {
-        a = true;
+        isNotIdle = true;
       });
     } else {
-      a = true;
+      isNotIdle = true;
     }
 
-  } else if (event.originalEvent.wheelDelta >= 0 && a) {
+  } else if (event.originalEvent.wheelDelta >= 0 && isNotIdle) {
 
-    a = false;
+    isNotIdle = false;
     var windowHeight = $(window).height();
+    console.log(windowHeight)
     if (currentSlide <= 5 && currentSlide >= 2) {
       $(".history__text_slide").animate({top: "45%",}, 200, function () {
       });
       $(".history__text_slide").animate({top: "50%",}, 700, function () {
       });
 
-      $(".history__text_item > img").animate({top: "40%",}, 200, function () {
+      $(".history-page__slide > img").animate({top: "40%",}, 200, function () {
       });
-      $(".history__text_item > img").animate({top: "50%",}, 1000, function () {
+      $(".history-page__slide > img").animate({top: "50%",}, 1000, function () {
       });
 
       currentSlide--;
-      $(".history__text").animate({
+      $(".history-page__sliders-wrap").animate({
         top: "+=" + windowHeight + "",
       }, 700, function () {
-        a = true;
+        isNotIdle = true;
       });
     } else {
-      a = true;
+      isNotIdle = true;
     }
   }
 
@@ -59,42 +61,42 @@ $(window).bind('mousewheel', function (event) {
 });
 
 
-function fillP(forNumber) {
-  var availableHeight = $('[for =' + forNumber + '] .history__text_slide').outerHeight();
-  console.log('AH = ' + availableHeight);
-
-  var fullHeight = 0;
-  $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
-    fullHeight += $(this).height();
-  });
-  console.log('FH = ' + fullHeight);
-
-  var fontSize = 16;
-  while (fullHeight + 300 < availableHeight) {
-    console.log('fontSize = ' + fontSize)
-    $('[for =' + forNumber + '] .history__text_slide').css({"font-size": +fontSize + "px"});
-    fontSize++;
-    console.log('fontSize++ = ' + fontSize)
-
-    var fullHeight = 0;
-    $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
-      fullHeight += $(this).height();
-    });
-    console.log('FH = ' + fullHeight);
-  }
-
-}
-
-var slideLength = $('.history__text_item').length;
-var i = 1;
-while (i <= slideLength) {
-  // fillP(i);
-  i++;
-}
-$(window).resize(function () {
-  var j = 1;
-  while (j <= slideLength) {
-    // fillP(j);
-    j++;
-  }
-});
+// function fillP(forNumber) {
+//   var availableHeight = $('[for =' + forNumber + '] .history__text_slide').outerHeight();
+//   console.log('AH = ' + availableHeight);
+//
+//   var fullHeight = 0;
+//   $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
+//     fullHeight += $(this).height();
+//   });
+//   console.log('FH = ' + fullHeight);
+//
+//   var fontSize = 16;
+//   while (fullHeight + 300 < availableHeight) {
+//     console.log('fontSize = ' + fontSize)
+//     $('[for =' + forNumber + '] .history__text_slide').css({"font-size": +fontSize + "px"});
+//     fontSize++;
+//     console.log('fontSize++ = ' + fontSize)
+//
+//     var fullHeight = 0;
+//     $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
+//       fullHeight += $(this).height();
+//     });
+//     console.log('FH = ' + fullHeight);
+//   }
+//
+// }
+//
+// var slideLength = $('.history-page__slide').length;
+// var i = 1;
+// while (i <= slideLength) {
+//   // fillP(i);
+//   i++;
+// }
+// $(window).resize(function () {
+//   var j = 1;
+//   while (j <= slideLength) {
+//     // fillP(j);
+//     j++;
+//   }
+// });
