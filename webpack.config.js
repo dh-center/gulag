@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozjpeg = require('imagemin-mozjpeg');
 require('dotenv').config();
 
 const PUBLIC_PATH = process.env.PUBLIC_PATH || '';
@@ -88,18 +86,6 @@ module.exports = (env, args) => {
       }
     ])
   ];
-
-  if (args.mode === 'production') {
-    plugins.push(new ImageminPlugin({
-      test: /\.(png|jpg|gif)$/,
-      plugins: [
-        imageminMozjpeg({
-          quality: 95,
-          progressive: true
-        })
-      ]
-    }))
-  }
 
   return {
     entry: './src/main.js',
