@@ -1,6 +1,0 @@
-version: "3.2"
-services:
-  gulag-stage:
-    build: .
-    ports:
-      - 8924:80
