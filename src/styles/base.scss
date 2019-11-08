@@ -1,5 +1,18 @@
 $caveat: 'Caveat', cursive;
 
+@import "~reset-css";
 @import "~slick-carousel/slick/slick";
 @import "../fonts/Bravo/fonts.css";
 @import "../fonts/Acrom/fonts.css";
+
+html, body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}

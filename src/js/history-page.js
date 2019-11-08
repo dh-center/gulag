@@ -1,111 +1,69 @@
-var blocksCount = $('.history__text > div').length;
-var currentSlide = 1;
-var a = true;
+const slidesCount = $('.history-page__slide').length;
+let currentSlide = 1;
+const windowHeight = $(window).height();
 
-$(window).bind('mousewheel', function (event) {
-  if (event.originalEvent.wheelDelta <= 0 && a) {
-// $(".history__text_slide").animate({top: "55%",}, 200, function() {});
-// $(".history__text_slide").animate({top: "50%",}, 700, function() {});
+/**
+ * Returns a function, that, as long as it continues to be invoked, will not
+ * be triggered. The function will be called after it stops being called for
+ * N milliseconds.
+ *
+ * @param {Function} f - function to wrap
+ * @param {Number} timeout - timeout in ms (`100`)
+ */
+function debounce(f, timeout) {
+  let isCooldown = false;
 
-// $(".history__text_item > img").animate({top: "60%",}, 200, function() {});
-// $(".history__text_item > img").animate({top: "50%",}, 1000, function() {});
+  return function () {
+    if (isCooldown) return;
 
-    a = false;
-    var windowHeight = $(window).height();
-    if (currentSlide <= 4 && currentSlide >= 1) {
-      $(".history__text_slide").animate({top: "55%",}, 200, function () {
-      });
-      $(".history__text_slide").animate({top: "50%",}, 700, function () {
-      });
+    f.apply(this, arguments);
 
-      $(".history__text_item > img").animate({top: "60%",}, 200, function () {
-      });
-      $(".history__text_item > img").animate({top: "50%",}, 1000, function () {
-      });
+    isCooldown = true;
 
-      currentSlide++;
-      $(window).unbind('click');
-      $(".history__text").animate({
-        top: "-=" + windowHeight + "",
-      }, 700, function () {
-        a = true;
-      });
-    } else {
-      a = true;
-    }
-
-  } else if (event.originalEvent.wheelDelta >= 0 && a) {
-// $(".history__text_slide").animate({top: "45%",}, 200, function() {});
-// $(".history__text_slide").animate({top: "50%",}, 700, function() {});
-
-// $(".history__text_item > img").animate({top: "40%",}, 200, function() {});
-// $(".history__text_item > img").animate({top: "50%",}, 1000, function() {});
-
-    a = false;
-    var windowHeight = $(window).height();
-    if (currentSlide <= 5 && currentSlide >= 2) {
-      $(".history__text_slide").animate({top: "45%",}, 200, function () {
-      });
-      $(".history__text_slide").animate({top: "50%",}, 700, function () {
-      });
-
-      $(".history__text_item > img").animate({top: "40%",}, 200, function () {
-      });
-      $(".history__text_item > img").animate({top: "50%",}, 1000, function () {
-      });
-
-      currentSlide--;
-      $(".history__text").animate({
-        top: "+=" + windowHeight + "",
-      }, 700, function () {
-        a = true;
-      });
-    } else {
-      a = true;
-    }
-  }
-
-  $(".history__years_item").removeClass('active');
-  $(".history__years_item[id='" + currentSlide + "']").addClass('active');
-});
-
-
-function fillP(forNumber) {
-  var availableHeight = $('[for =' + forNumber + '] .history__text_slide').outerHeight();
-  console.log('AH = ' + availableHeight);
-
-  var fullHeight = 0;
-  $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
-    fullHeight += $(this).height();
-  });
-  console.log('FH = ' + fullHeight);
-
-  var fontSize = 16;
-  while (fullHeight + 300 < availableHeight) {
-    console.log('fontSize = ' + fontSize)
-    $('[for =' + forNumber + '] .history__text_slide').css({"font-size": +fontSize + "px"});
-    fontSize++;
-    console.log('fontSize++ = ' + fontSize)
-
-    var fullHeight = 0;
-    $('[for =' + forNumber + '] .history__text_slide > *').each(function () {
-      fullHeight += $(this).height();
-    });
-    console.log('FH = ' + fullHeight);
-  }
-
+    setTimeout(() => isCooldown = false, timeout);
+  };
 }
 
-var slideLength = $('.history__text_item').length;
-var i = 1;
-while (i <= slideLength) {
-  fillP(i);
-  i++;
-}
-$(window).resize(function () {
-  var j = 1;
-  while (j <= slideLength) {
-    fillP(j);
-    j++;
+/**
+ * Changes slide on scroll
+ * @param {jQuery.Event} event
+ */
+function changeSlideOnMouseWheel(event) {
+  const isScrollingDown = event.originalEvent.wheelDelta <= 0;
+
+  if (isScrollingDown) {
+    nextSlide();
+  } else {
+    previousSlide();
   }
-});
+
+  /**
+   * Change current year in left menu
+   */
+  $(".history-page__year-item").removeClass('history-page__year-item--active');
+  $(".history-page__year-item[id='" + currentSlide + "']").addClass('history-page__year-item--active');
+}
+
+/**
+ * Goes to next slide
+ */
+function nextSlide() {
+  const canGoNext = currentSlide >= 1 && currentSlide <= slidesCount - 1;
+  if (canGoNext) {
+    currentSlide++;
+    $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+  }
+}
+
+/**
+ * Goes to previous slide
+ */
+function previousSlide() {
+  const canGoPrevious = currentSlide >= 2 && currentSlide <= slidesCount;
+  if (canGoPrevious) {
+    currentSlide--;
+    $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+  }
+}
+
+$(window).on('wheel',debounce(changeSlideOnMouseWheel, 500));
