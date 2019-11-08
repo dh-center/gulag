@@ -1,11 +1,16 @@
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
-let isIdle = false;
 const windowHeight = $(window).height();
 
-
-function debounce(f, ms) {
-
+/**
+ * Returns a function, that, as long as it continues to be invoked, will not
+ * be triggered. The function will be called after it stops being called for
+ * N milliseconds.
+ *
+ * @param {Function} f - function to wrap
+ * @param {Number} timeout - timeout in ms (`100`)
+ */
+function debounce(f, timeout) {
   let isCooldown = false;
 
   return function () {
@@ -15,16 +20,15 @@ function debounce(f, ms) {
 
     isCooldown = true;
 
-    setTimeout(() => isCooldown = false, ms);
+    setTimeout(() => isCooldown = false, timeout);
   };
 }
 
 /**
- *
- * @param {MouseWheelEvent} event
+ * Changes slide on scroll
+ * @param {jQuery.Event} event
  */
 function changeSlideOnMouseWheel(event) {
-  if (isIdle) return;
   const isScrollingDown = event.originalEvent.wheelDelta <= 0;
 
   if (isScrollingDown) {
@@ -33,31 +37,33 @@ function changeSlideOnMouseWheel(event) {
     previousSlide();
   }
 
+  /**
+   * Change current year in left menu
+   */
   $(".history-page__year-item").removeClass('history-page__year-item--active');
   $(".history-page__year-item[id='" + currentSlide + "']").addClass('history-page__year-item--active');
 }
 
-$(window).bind('mousewheel', debounce(changeSlideOnMouseWheel, 500));
-
+/**
+ * Goes to next slide
+ */
 function nextSlide() {
-  const canScrollDown = currentSlide >= 1 && currentSlide <= slidesCount - 1;
-  if (canScrollDown) {
-    isIdle = true;
+  const canGoNext = currentSlide >= 1 && currentSlide <= slidesCount - 1;
+  if (canGoNext) {
     currentSlide++;
     $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
-
-    isIdle = false;
   }
 }
 
+/**
+ * Goes to previous slide
+ */
 function previousSlide() {
-  const canScrollUp = currentSlide >= 2 && currentSlide <= slidesCount;
-  if (canScrollUp) {
-    isIdle = true;
+  const canGoPrevious = currentSlide >= 2 && currentSlide <= slidesCount;
+  if (canGoPrevious) {
     currentSlide--;
-
     $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
-
-    isIdle = false;
   }
 }
+
+$(window).on('wheel',debounce(changeSlideOnMouseWheel, 500));
