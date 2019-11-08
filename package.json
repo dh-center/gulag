@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --mode=production",
-    "pages": "git subtree push --prefix dist origin gh-pages"
+    "build": "webpack --mode=production"
   },
   "author": "DH Center <dh@itmo.ru>",
   "license": "ISC",
