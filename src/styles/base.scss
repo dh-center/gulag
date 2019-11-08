@@ -4,3 +4,7 @@ $caveat: 'Caveat', cursive;
 @import "~slick-carousel/slick/slick";
 @import "../fonts/Bravo/fonts.css";
 @import "../fonts/Acrom/fonts.css";
+
+html, body {
+  height: 100%;
+}
