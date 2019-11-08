@@ -50,16 +50,12 @@
   }
 
   &__sliders-wrap {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 100%;
+    transition: transform 500ms ease;
   }
 
   &__slide {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
