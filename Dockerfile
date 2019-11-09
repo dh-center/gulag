@@ -1,9 +1,14 @@
 # build node-gyp modules in different stage
 FROM node:10-alpine as build-stage
 
-COPY . .
+COPY package.json yarn.lock ./
 
 RUN yarn
+
+COPY src ./src
+COPY webpack.config.js ./
+
+
 RUN yarn build
 
 # production environment
