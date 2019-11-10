@@ -29,7 +29,6 @@
   &__year-item {
     position: relative;
     padding-left: 30px;
-    font-family: "B52";
     font-weight: 700;
     font-size: 36px;
     color: #ca9f75;
@@ -46,8 +45,8 @@
     }
 
     &--active {
-      font-family: 'BravoSC';
-      font-size: 50px;
+      font-size: 45px;
+      text-decoration: underline;
     }
   }
 
@@ -127,17 +126,18 @@
 
 .slide2 {
   background-image: url('/img/history-page/history-bg-2.jpg');
-
 }
 
 .slide3 {
   background-image: url('/img/history-page/history-bg-3.jpg');
 
+  &__images-right {
+    height: 70%;
+  }
 }
 
 .slide4 {
   background-image: url('/img/history-page/history-bg-4.jpg');
-
 }
 
 .slide5 {
@@ -153,5 +153,11 @@
     text-align: center;
     background: linear-gradient(to right, #ca9e74, #c9926d);
     margin: 10px 0;
+  }
+}
+
+.slide2, .slide4 {
+  &__images-right {
+    height: 50%;
   }
 }
