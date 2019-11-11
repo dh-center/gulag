@@ -89,9 +89,7 @@
   }
 
   &__image-right {
-    left: 60%;
     height: 95%;
-    top: 50%;
     transform: translateY(-50%);
 
     &--center {
@@ -104,9 +102,22 @@
 .slide1 {
   background-image: url('/img/history-page/history-bg-1.jpg');
 
-  &__image-right {
-    left: 60%;
-    height: 95%;
+  &__image1 {
+    height: 45%;
+    transform: translate(60%, -87%) rotate(4deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(60%, -87%) scale(1.1);
+    }
+  }
+
+  &__image2 {
+    height: 45%;
+    transform: translate(28%, -17%) rotate(-3deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(28%, -17%) scale(1.1);
+    }
   }
 
   &__header {
@@ -164,20 +175,25 @@
 }
 
 .slide-image {
+  will-change: height;
   position: absolute;
   transition: 200ms ease-in;
+  top: 50%;
+  left: 50%;
 
   &--active {
     height: 100%;
-    left: 50%;
-    z-index: 100;
+    cursor: pointer;
     transform: translate(-50%, -50%);
   }
 
   &--hover-triggered {
     &:hover {
-      transform: translateY(-50%) scale(1.01);
       cursor: pointer;
     }
+  }
+
+  &--centered {
+
   }
 }
