@@ -66,4 +66,9 @@ function previousSlide() {
   }
 }
 
-$(window).on('wheel',debounce(changeSlideOnMouseWheel, 500));
+$(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
+
+$('.slide-image').addClass('slide-image--hover-triggered');
+$('.slide-image').click(function () {
+  $(this).toggleClass('slide-image--active slide-image--hover-triggered');
+});

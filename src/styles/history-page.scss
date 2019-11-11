@@ -88,23 +88,24 @@
     }
   }
 
-  &__images-right {
-    position: absolute;
+  &__image-right {
     left: 60%;
+    height: 95%;
     top: 50%;
     transform: translateY(-50%);
-    height: 95%;
+
+    &--center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 
 .slide1 {
   background-image: url('/img/history-page/history-bg-1.jpg');
 
-  &__images-right {
-    position: absolute;
+  &__image-right {
     left: 60%;
-    top: 50%;
-    transform: translateY(-50%);
     height: 95%;
   }
 
@@ -131,7 +132,7 @@
 .slide3 {
   background-image: url('/img/history-page/history-bg-3.jpg');
 
-  &__images-right {
+  &__image-right {
     height: 70%;
   }
 }
@@ -157,7 +158,26 @@
 }
 
 .slide2, .slide4 {
-  &__images-right {
+  &__image-right {
     height: 50%;
+  }
+}
+
+.slide-image {
+  position: absolute;
+  transition: 200ms ease-in;
+
+  &--active {
+    height: 100%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+  }
+
+  &--hover-triggered {
+    &:hover {
+      transform: translateY(-50%) scale(1.01);
+      cursor: pointer;
+    }
   }
 }
