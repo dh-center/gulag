@@ -131,8 +131,13 @@
     position: absolute;
     width: 100px;
     height: auto;
-    top: 30px;
+    top: 15px;
     left: 65%;
+    transition: all 150ms ease-in;
+
+    &:hover {
+      transform: scale(1.7);
+    }
   }
 }
 
