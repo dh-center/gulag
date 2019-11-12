@@ -69,6 +69,20 @@
   background-image: url('/img/history-page/history-text-bg.png');
   background-repeat: no-repeat;
   padding: 80px 70px 80px;
+  transform: translate(-50%, -50%) rotateZ(-5deg);
+
+
+  &--hover-triggered {
+    &:hover {
+      cursor: pointer;
+      transform: translate(-50%, -50%) rotateZ(-5deg) scale(1.05);
+    }
+  }
+
+  &--active {
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
 }
 
 .slide1, .slide2, .slide3, .slide4, .slide5 {
@@ -78,7 +92,7 @@
     height: 90%;
     left: 50%;
     width: 500px;
-    transform: translate(-50%, -50%) rotateZ(-5deg);
+    transition: 150ms ease;
 
     & p {
       margin-bottom: 10px;
@@ -88,24 +102,36 @@
     }
   }
 
-  &__images-right {
-    position: absolute;
-    left: 60%;
-    top: 50%;
-    transform: translateY(-50%);
+  &__image-right {
     height: 95%;
+    transform: translateY(-50%);
+
+    &--center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 
 .slide1 {
   background-image: url('/img/history-page/history-bg-1.jpg');
 
-  &__images-right {
-    position: absolute;
-    left: 60%;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 95%;
+  &__image1 {
+    height: 45%;
+    transform: translate(92%, -87%) rotate(4deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(92%, -87%) scale(1.1);
+    }
+  }
+
+  &__image2 {
+    height: 45%;
+    transform: translate(28%, -17%) rotate(-3deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(28%, -17%) scale(1.1);
+    }
   }
 
   &__header {
@@ -119,25 +145,61 @@
     position: absolute;
     width: 100px;
     height: auto;
-    top: 30px;
+    top: 15px;
     left: 65%;
+    transition: all 150ms ease-in;
+
+    &:hover {
+      transform: scale(1.7);
+    }
   }
 }
 
 .slide2 {
   background-image: url('/img/history-page/history-bg-2.jpg');
+
+  &__image-right {
+    transform: translate(19%, -20%) rotate(10deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(19%, -20%) scale(1.1);
+    }
+  }
 }
 
 .slide3 {
   background-image: url('/img/history-page/history-bg-3.jpg');
 
-  &__images-right {
-    height: 70%;
+  &__image1 {
+    height: 45%;
+    transform: translate(35%, -98%);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(35%, -98%) scale(1.1);
+    }
+  }
+
+  &__image2 {
+    height: 45%;
+    transform: translate(55%, -17%) rotate(9deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(55%, -17%) scale(1.1);
+    }
   }
 }
 
 .slide4 {
   background-image: url('/img/history-page/history-bg-4.jpg');
+
+  &__image-right {
+    height: 45%;
+    transform: translate(47%, -47%) rotate(9deg);
+
+    &.slide-image--hover-triggered:hover {
+      transform: translate(47%, -47%) scale(1.1);
+    }
+  }
 }
 
 .slide5 {
@@ -154,10 +216,46 @@
     background: linear-gradient(to right, #ca9e74, #c9926d);
     margin: 10px 0;
   }
+
+  &__image-wrapper {
+    min-height: 0;
+    height: 100%;
+    margin: 10px 20px;
+
+    img {
+      height: 100%;
+      transition: 150ms ease-in;
+
+      &:hover {
+        transform: scale(1.6);
+      }
+    }
+  }
 }
 
 .slide2, .slide4 {
-  &__images-right {
+  &__image-right {
     height: 50%;
+  }
+}
+
+.slide-image {
+  will-change: height;
+  position: absolute;
+  transition: 200ms ease-in;
+  top: 50%;
+  left: 50%;
+
+  &--active {
+    z-index: 100;
+    height: 100%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+  }
+
+  &--hover-triggered {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
