@@ -104,10 +104,10 @@
 
   &__image1 {
     height: 45%;
-    transform: translate(60%, -87%) rotate(4deg);
+    transform: translate(92%, -87%) rotate(4deg);
 
     &.slide-image--hover-triggered:hover {
-      transform: translate(60%, -87%) scale(1.1);
+      transform: translate(92%, -87%) scale(1.1);
     }
   }
 
@@ -182,6 +182,7 @@
   left: 50%;
 
   &--active {
+    z-index: 100;
     height: 100%;
     cursor: pointer;
     transform: translate(-50%, -50%);

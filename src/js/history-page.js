@@ -70,5 +70,14 @@ $(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
 
 $('.slide-image').addClass('slide-image--hover-triggered');
 $('.slide-image').click(function () {
-  $(this).toggleClass('slide-image--active slide-image--hover-triggered');
+  const jq = $(this);
+
+  if (!jq.hasClass('slide-image--active')) {
+    $('.slide-image--active')
+      .removeClass('slide-image--active')
+      .addClass('slide-image--hover-triggered');
+  }
+
+  $(this)
+    .toggleClass('slide-image--active slide-image--hover-triggered');
 });
