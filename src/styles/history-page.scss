@@ -202,6 +202,21 @@
     background: linear-gradient(to right, #ca9e74, #c9926d);
     margin: 10px 0;
   }
+
+  &__image-wrapper {
+    min-height: 0;
+    height: 100%;
+    margin: 10px 20px;
+
+    img {
+      height: 100%;
+      transition: 150ms ease-in;
+
+      &:hover {
+        transform: scale(1.6);
+      }
+    }
+  }
 }
 
 .slide2, .slide4 {
@@ -228,9 +243,5 @@
     &:hover {
       cursor: pointer;
     }
-  }
-
-  &--centered {
-
   }
 }
