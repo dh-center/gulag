@@ -69,6 +69,20 @@
   background-image: url('/img/history-page/history-text-bg.png');
   background-repeat: no-repeat;
   padding: 80px 70px 80px;
+  transform: translate(-50%, -50%) rotateZ(-5deg);
+
+
+  &--hover-triggered {
+    &:hover {
+      cursor: pointer;
+      transform: translate(-50%, -50%) rotateZ(-5deg) scale(1.05);
+    }
+  }
+
+  &--active {
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
 }
 
 .slide1, .slide2, .slide3, .slide4, .slide5 {
@@ -78,7 +92,7 @@
     height: 90%;
     left: 50%;
     width: 500px;
-    transform: translate(-50%, -50%) rotateZ(-5deg);
+    transition: 150ms ease;
 
     & p {
       margin-bottom: 10px;

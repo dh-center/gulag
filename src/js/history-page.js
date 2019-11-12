@@ -78,6 +78,10 @@ $('.slide-image').click(function () {
       .addClass('slide-image--hover-triggered');
   }
 
-  $(this)
-    .toggleClass('slide-image--active slide-image--hover-triggered');
+  jq.toggleClass('slide-image--active slide-image--hover-triggered');
+});
+
+$('.text-on-paper').addClass('text-on-paper--hover-triggered');
+$('.text-on-paper').click(function () {
+  $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
 });
