@@ -84,6 +84,13 @@ module.exports = (env, args) => {
         to: './fonts/',
         test: /\.(svg|woff|woff2|ttf|eot)$/
       }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: './src/favicons/',
+        to: './favicons/',
+        test: /\.(png|ico)$/
+      }
     ])
   ];
 
