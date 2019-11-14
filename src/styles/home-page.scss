@@ -53,4 +53,23 @@
     transform: translateY(-50%);
     padding: 10px;
   }
+
+  &__languages {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-family: "Acrom";
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+
+    &-link {
+      color: #ffffff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
