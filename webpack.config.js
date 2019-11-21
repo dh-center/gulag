@@ -22,7 +22,8 @@ const pages = [
   'index',
   'history-page',
   'periods-page',
-  'victims-page'
+  'victims-page',
+  'deportation-page'
 ];
 
 function getPagesArray() {
