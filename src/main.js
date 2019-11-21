@@ -1,6 +1,7 @@
 import './js/years-page'
 import './js/history-page'
 import './js/victims-page'
+import './js/deportation-page'
 
 import './styles/periods-page.scss'
 import './styles/history-page.scss'

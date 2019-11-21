@@ -28,11 +28,11 @@
   }
 }
 
-.slide1, .slide2, .slide3, .slide4, .slide5 {
+.slide1, .slide2, .slide3, .slide4 {
 
 }
 
-.slide1 {
+.slide1, .slide4 {
   display: flex;
   flex-direction: column;
   align-items: center;
