@@ -77,18 +77,22 @@
   }
 }
 
-.deportation-page__sliders-wrap > .slide2 {
+.deportation-page__sliders-wrap .slide2 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
 }
 
-.deportation-page__sliders-wrap > .slide1, .deportation-page__sliders-wrap > .slide3, .deportation-page__sliders-wrap > .slide4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.deportation-page__sliders-wrap {
+  .slide1,
+  .slide3,
+  .slide4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .calendar {
