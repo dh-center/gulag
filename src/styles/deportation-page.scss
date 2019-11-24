@@ -17,7 +17,7 @@
     background-image: url('/img/deportation-page/map-bg-1.png');
     background-size: cover;
 
-    &--text-block {
+    &_text-block {
       font-family: 'BravoSC';
       font-size: 32px;
       padding: 45px;
@@ -26,7 +26,7 @@
       width: 60%;
     }
 
-    &--map {
+    &_map {
       width: 100%;
 
       &-wrapper {
@@ -54,7 +54,7 @@
       }
     }
 
-    &--document {
+    &_document {
       width: 100%;
 
       &-wrapper {
@@ -77,13 +77,6 @@
   }
 }
 
-.deportation-page__sliders-wrap .slide2 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
 .deportation-page__sliders-wrap {
   .slide1,
   .slide3,
@@ -91,6 +84,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+
+  .slide2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
   }
 }
