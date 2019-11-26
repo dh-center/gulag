@@ -1,28 +1,8 @@
+import debounce from "./debounce";
+
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
 const windowHeight = $(window).height();
-
-/**
- * Returns a function, that, as long as it continues to be invoked, will not
- * be triggered. The function will be called after it stops being called for
- * N milliseconds.
- *
- * @param {Function} f - function to wrap
- * @param {Number} timeout - timeout in ms (`100`)
- */
-function debounce(f, timeout) {
-  let isCooldown = false;
-
-  return function () {
-    if (isCooldown) return;
-
-    f.apply(this, arguments);
-
-    isCooldown = true;
-
-    setTimeout(() => isCooldown = false, timeout);
-  };
-}
 
 /**
  * Changes slide on scroll
