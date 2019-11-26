@@ -14,7 +14,6 @@
     font-family: 'BravoSC';
     font-size: 32px;
     padding: 45px;
-    text-align: left;
     background: linear-gradient(to right, #ca9e74, #c9926d);
     width: 60%;
   }
@@ -40,7 +39,6 @@
     font-family: 'BravoSC';
     font-size: 28px;
     padding: 40px;
-    text-align: left;
     background: linear-gradient(to right, #ca9e74, #c9926d);
     width: 100%;
     position: absolute;
@@ -61,7 +59,6 @@
     font-family: 'BravoSC';
     font-size: 22px;
     padding: 40px;
-    text-align: left;
     background: linear-gradient(to right, #ca9e74, #c9926d);
     width: 25%;
     position: absolute;
@@ -79,6 +76,7 @@
 
 .deportation-page__sliders-wrap {
   .slide1,
+  .slide2,
   .slide3,
   .slide4 {
     display: flex;
@@ -88,10 +86,7 @@
   }
 
   .slide2 {
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
   }
 }
 
