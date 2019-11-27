@@ -24,7 +24,7 @@
         <div class="text-on-paper slide1__text-wrapper">
           <img class="slide1__avatar" src="/img/history-page/history-avatar.png" alt="">
           <h3 class="slide1__header">
-            {{ history.firstSlide.header[0] }}<br>{{ history.firstSlide.header[1] }}<br>{{ history.firstSlide.header[2] }}
+            {{ history.firstSlide.header|join('<br>') }}
           </h3>
           {% for text in history.firstSlide.text %}
             <p>{{ text }}</p>
@@ -58,9 +58,7 @@
       </div>
       <div class="history-page__slide slide5">
         <div class="slide5__header">
-          {{ history.fifthSlide.text[0] }}
-          <br>
-          {{ history.fifthSlide.text[1] }}
+          {{ history.fifthSlide.text|join('<br>') }}
         </div>
         <div class="slide5__image-wrapper">
           <img src="/img/history-page/history-last-1.jpg" alt="">
