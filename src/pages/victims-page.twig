@@ -4,14 +4,14 @@
   <main class="victims-page">
     <div class="victims-page__slider-wrap">
       <div class="victims-page__slider">
-        {% for item in 1..5 %}
+        {% for victim in victims %}
           <div class="victims-page__slider-item">
-            <a href="#">
-              <img src="{{ publicPath }}/img/victims-page/victim-{{ item }}.png" alt="">
+            <a href="{{ victim.link }}">
+              <img src="{{ victim.photo }}" alt="">
               <div class="victims-page__slider-item-name">
-                Нагинская Фрина Иоилевна
+                {{ victim.name }}
               </div>
-              <img src="{{ publicPath }}/img/victims-page/victim-bg.png" class="victims-page__slider-item-background">
+              <img src="/img/victims-page/victim-bg.png" class="victims-page__slider-item-background">
             </a>
           </div>
         {% endfor %}

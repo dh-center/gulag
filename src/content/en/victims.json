@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Nikitin Vasily Ilyich",
+    "photo": "/img/victims-page/victim-1.png",
+    "link": "/en/history-page"
+  },
+  {
+    "name": "Navrotskaya Valeria Antonovna",
+    "photo": "/img/victims-page/victims/navrotskaya_valeriya_antonovna.jpg",
+    "link": "#"
+  },
+  {
+    "name": "Glushkov Victor Grigorievich",
+    "photo": "/img/victims-page/victims/glushkov_viktor_grigoryevich.jpg",
+    "link": "#"
+  },
+  {
+    "name": "Petin Nikolay Nikolaevich",
+    "photo": "/img/victims-page/victims/petin_nikolay_nikolaevich.jpg",
+    "link": "#"
+  },
+  {
+    "name": "Mark Maxim Gugovich",
+    "photo": "/img/victims-page/victims/mark_maksim_gugovich.jpg",
+    "link": ""
+  },
+  {
+    "name": "Sankevich Karl Nikolaevich",
+    "photo": "/img/victims-page/victims/sankevich_karl_nikolaevich.jpg",
+    "link": "#"
+  },
+  {
+    "name": "Wagner Voldemar Bogdanovich",
+    "photo": "/img/victims-page/victims/vagner_voldemar_bogdanovich.jpg",
+    "link": "#"
+  }
+]
