@@ -25,6 +25,10 @@ function nextSlide() {
   const canGoNext = currentSlide >= 1 && currentSlide <= slidesCount - 1;
   if (canGoNext) {
     currentSlide++;
+    if(currentSlide === 2) {
+      $("deportation-map__document").toggleClass('deportation-map__document--hidden');
+    }
+
     $(".deportation-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
   }
 }
