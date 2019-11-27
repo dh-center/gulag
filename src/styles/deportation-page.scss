@@ -50,6 +50,8 @@
 
 .deportation-map {
   width: 100%;
+  position: relative;
+  z-index: 100;
 
   &__wrapper {
     width: 70%;
@@ -68,16 +70,29 @@
   }
 
   &__document {
+    display: block;
     position: absolute;
-    left: 35%;
-    top: 20%;
+    transition: all 1s ease;
     width: 20%;
-    visibility: hidden;
 
-    &--hidden {
+    &--not-visible {
+      visibility: hidden;
+    }
+
+    &--normal {
+      left: 27%;
+      top: 4%;
+    }
+
+    &--hidden-top {
       top: 0;
-      bottom: auto;
-      transform: translateY(-100%)
+      left: 27%;
+      transform: translateY(-100%);
+    }
+
+    &--hidden-bottom {
+      left: 27%;
+      top: 100%;
     }
   }
 }
