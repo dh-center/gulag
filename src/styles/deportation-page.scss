@@ -72,7 +72,9 @@
   &__document {
     display: block;
     position: absolute;
-    transition: all 1s ease;
+    transition-property: top, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
     width: 20%;
 
     &--not-visible {

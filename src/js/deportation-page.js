@@ -6,7 +6,7 @@ let currentSlide = 1;
 const windowHeight = $(window).height();
 
 const mapDocument = $(".deportation-map__document");
-
+const slidersWrap = $(".deportation-page__sliders-wrap");
 
 /**
  * Changes slide on scroll
@@ -31,7 +31,7 @@ async function nextSlide() {
     currentSlide++;
 
     if(currentSlide === 2) {
-      $(".deportation-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+      slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 
       await wait(500);
       mapDocument.removeClass('deportation-map__document--not-visible');
@@ -45,25 +45,42 @@ async function nextSlide() {
       mapDocument.addClass('deportation-map__document--hidden-bottom');
 
       await wait(1000);
-      // mapDocument.css('visibility', 'hidden');
       mapDocument.addClass('deportation-map__document--not-visible');
-      $(".deportation-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+      slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 
       return;
     }
 
-    $(".deportation-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+    slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
   }
 }
 
 /**
  * Goes to previous slide
  */
-function previousSlide() {
+async function previousSlide() {
   const canGoPrevious = currentSlide >= 2 && currentSlide <= slidesCount;
   if (canGoPrevious) {
     currentSlide--;
-    $(".deportation-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+
+    if(currentSlide === 1) {
+      mapDocument.addClass('deportation-map__document--hidden-top');
+      await wait(1000);
+
+      mapDocument.addClass('deportation-map__document--not-visible');
+    }
+
+    if (currentSlide === 2) {
+      slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+
+      await wait(500);
+      mapDocument.removeClass('deportation-map__document--not-visible');
+
+      mapDocument.removeClass('deportation-map__document--hidden-bottom');
+      mapDocument.addClass('deportation-map__document--normal');
+    }
+
+    slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
   }
 }
 
