@@ -1,4 +1,5 @@
-import debounce from "./debounce";
+import debounce from './debounce';
+import throttle from './throttle';
 
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
@@ -69,7 +70,7 @@ $('.text-on-paper').click(function () {
 /**
  * Update windowHeight when window is resizing
  */
-$(window).resize(debounce(function () {
+$(window).resize(throttle(function () {
   windowHeight = $(window).height();
   $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 }, 200));
