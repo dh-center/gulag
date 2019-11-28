@@ -2,7 +2,7 @@ import debounce from "./debounce";
 
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
-const windowHeight = $(window).height();
+let windowHeight = $(window).height();
 
 /**
  * Changes slide on scroll
@@ -64,4 +64,11 @@ $('.slide-image').click(function () {
 $('.text-on-paper').addClass('text-on-paper--hover-triggered');
 $('.text-on-paper').click(function () {
   $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
+});
+
+/**
+ * Update windowHeight when window is resizing
+ */
+$(window).resize(function () {
+  windowHeight = $(window).height();
 });
