@@ -9,6 +9,10 @@
   align-items: center;
   background-position: center center;
 
+  .li {
+    cursor: pointer;
+  }
+
   &__periods-list {
     padding-left: 170px;
   }
