@@ -1,28 +1,9 @@
+import debounce from './debounce';
+import throttle from './throttle';
+
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
-const windowHeight = $(window).height();
-
-/**
- * Returns a function, that, as long as it continues to be invoked, will not
- * be triggered. The function will be called after it stops being called for
- * N milliseconds.
- *
- * @param {Function} f - function to wrap
- * @param {Number} timeout - timeout in ms (`100`)
- */
-function debounce(f, timeout) {
-  let isCooldown = false;
-
-  return function () {
-    if (isCooldown) return;
-
-    f.apply(this, arguments);
-
-    isCooldown = true;
-
-    setTimeout(() => isCooldown = false, timeout);
-  };
-}
+let windowHeight = $(window).height();
 
 /**
  * Changes slide on scroll
@@ -94,3 +75,11 @@ $('.text-on-paper').addClass('text-on-paper--hover-triggered');
 $('.text-on-paper').click(function () {
   $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
 });
+
+/**
+ * Update windowHeight when window is resizing
+ */
+$(window).resize(throttle(function () {
+  windowHeight = $(window).height();
+  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+}, 200));

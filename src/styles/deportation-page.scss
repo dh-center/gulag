@@ -1,0 +1,104 @@
+@import "./base";
+@import "../fonts/Bravo/fonts.css";
+
+.deportation-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__sliders-wrap {
+    transition: transform 500ms ease;
+  }
+
+  &__text-block {
+    font-family: 'BravoSC';
+    font-size: 32px;
+    padding: 45px;
+    background: linear-gradient(to right, #ca9e74, #c9926d);
+    width: 60%;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/img/deportation-page/map-bg-1.png');
+    background-size: cover;
+  }
+}
+
+.deportation-document {
+  width: 100%;
+
+  &__wrapper {
+    position: relative;
+    width: 35%;
+  }
+
+  &__text {
+    font-family: 'BravoSC';
+    font-size: 28px;
+    padding: 40px;
+    background: linear-gradient(to right, #ca9e74, #c9926d);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: -70%;
+  }
+}
+
+.deportation-map {
+  width: 100%;
+
+  &__wrapper {
+    width: 70%;
+    margin-right: 5%;
+  }
+
+  &__text {
+    font-family: 'BravoSC';
+    font-size: 22px;
+    padding: 40px;
+    background: linear-gradient(to right, #ca9e74, #c9926d);
+    width: 25%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+  }
+
+  &__document {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    width: 20%;
+  }
+}
+
+.deportation-page__sliders-wrap {
+  .slide1,
+  .slide2,
+  .slide3,
+  .slide4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide2 {
+    align-items: flex-end;
+  }
+}
+
+.calendar {
+  position: absolute;
+  left: -2%;
+  bottom: -2%;
+  width: 30%;
+  background: url('/img/deportation-page/calendar-bg.png');
+  background-size: cover;
+
+  &__photo {
+    width: 100%;
+  }
+}
