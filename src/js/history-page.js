@@ -69,6 +69,7 @@ $('.text-on-paper').click(function () {
 /**
  * Update windowHeight when window is resizing
  */
-$(window).resize(function () {
+$(window).resize(debounce(function () {
   windowHeight = $(window).height();
-});
+  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+}, 200));
