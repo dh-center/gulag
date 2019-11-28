@@ -1,8 +1,9 @@
-import debounce from "./debounce";
+import debounce from './debounce';
+import throttle from './throttle';
 
 const slidesCount = $('.history-page__slide').length;
 let currentSlide = 1;
-const windowHeight = $(window).height();
+let windowHeight = $(window).height();
 
 /**
  * Changes slide on scroll
@@ -65,3 +66,11 @@ $('.text-on-paper').addClass('text-on-paper--hover-triggered');
 $('.text-on-paper').click(function () {
   $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
 });
+
+/**
+ * Update windowHeight when window is resizing
+ */
+$(window).resize(throttle(function () {
+  windowHeight = $(window).height();
+  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+}, 200));
