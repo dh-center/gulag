@@ -47,6 +47,15 @@ function previousSlide() {
   }
 }
 
+function goToSlide(event) {
+  currentSlide = event.target.id;
+  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+  $(".history-page__year-item").removeClass('history-page__year-item--active');
+  $(".history-page__year-item[id='" + event.target.id + "']").addClass('history-page__year-item--active');
+}
+
+$('.history-page__year-item').on('click', goToSlide)
+
 $(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
 
 $('.slide-image').addClass('slide-image--hover-triggered');
