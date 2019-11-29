@@ -10,6 +10,9 @@ const slidersWrap = $(".deportation-page__sliders-wrap");
 const mapText = $(".deportation-map__text");
 mapText.addClass('deportation-map__text--hidden');
 
+const documentText = $('.deportation-document__text');
+documentText.addClass('deportation-document__text--hidden');
+
 const calendars = $('.calendar');
 calendars.addClass('calendar--hidden');
 
@@ -63,14 +66,22 @@ async function nextSlide() {
       mapDocument.addClass('deportation-map__document--not-visible');
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
       await wait(500);
+      calendar8.removeClass('calendar--not-visible');
+      documentText.removeClass('deportation-document__text--hidden');
       calendar8.removeClass('calendar--hidden');
       return;
     }
 
     if (currentSlide === 4) {
       calendar8.addClass('calendar--hidden');
+      documentText.addClass('deportation-document__text--hidden');
+
       await wait(500);
       calendar8.addClass('calendar--not-visible');
+      slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+      await wait(500);
+
+      return;
     }
 
     slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
@@ -98,6 +109,8 @@ async function previousSlide() {
 
     if (currentSlide === 2) {
       calendar8.addClass('calendar--hidden');
+      documentText.addClass('deportation-document__text--hidden');
+
       await wait(500);
       calendar8.addClass('calendar--not-visible');
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
@@ -114,9 +127,12 @@ async function previousSlide() {
 
     if (currentSlide === 3) {
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+
       await wait(500);
       calendar8.removeClass('calendar--not-visible');
       calendar8.removeClass('calendar--hidden');
+      documentText.removeClass('deportation-document__text--hidden');
+
     }
 
     slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);

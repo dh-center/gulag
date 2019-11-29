@@ -41,10 +41,18 @@
     font-size: 28px;
     padding: 40px;
     background: linear-gradient(to right, #ca9e74, #c9926d);
-    width: 100%;
+    overflow:hidden;
+    white-space:nowrap;
     position: absolute;
+    transition: all 500ms ease;
     top: 0;
     right: -70%;
+
+    &--hidden {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -63,7 +71,6 @@
     font-size: 22px;
     padding: 40px;
     background: linear-gradient(to right, #ca9e74, #c9926d);
-    //width: 25%;
     overflow:hidden;
     white-space:nowrap;
     z-index: 110;
