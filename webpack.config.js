@@ -10,11 +10,13 @@ const PUBLIC_PATH = process.env.PUBLIC_PATH || '';
 const contentDataset = {
   ru: {
     periodsInfo: require('./src/content/ru/periodsInfo'),
-    dict: require('./src/content/ru/dict')
+    dict: require('./src/content/ru/dict'),
+    history: require('./src/content/ru/history')
   },
   en: {
     periodsInfo: require('./src/content/en/periodsInfo'),
-    dict: require('./src/content/en/dict')
+    dict: require('./src/content/en/dict'),
+    history: require('./src/content/en/history')
   }
 };
 
