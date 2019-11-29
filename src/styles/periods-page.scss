@@ -53,8 +53,9 @@
   &__period-description-item {
     padding: 20px 40px;
     display: none;
+    max-height: 550px;
     background: linear-gradient(to bottom, rgb(173, 103, 81) 0%, rgb(181, 131, 100) 42%, rgb(189, 159, 119) 94%);
-    min-height: 90%;
+    height: 90%;
 
     & h2 {
       font-size: 70px;
@@ -64,7 +65,7 @@
     }
 
     & p {
-      font-size: 25px;
+      font-size: 23px;
       font-family: "Acrom";
       color: #fff;
       line-height: 1.2;
