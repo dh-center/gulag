@@ -32,11 +32,17 @@
             {{ item.description }}
           </p>
           <ul class="periods-page__period-topics">
-            {% for topic in 1..5 %}
+            {% if index == 4 %}
               <li class="periods-page__period-topics-item">
-                <a href="#">{{dict.theme}} №{{ topic }}</a>
+                <a href="../deportation-page/">{{dict.deportations}}</a>
               </li>
-            {% endfor %}
+            {% else %}
+              {% for topic in 1..5 %}
+                <li class="periods-page__period-topics-item">
+                  <a href="#">{{dict.theme}} №{{ topic }}</a>
+                </li>
+              {% endfor %}
+            {% endif %}
           </ul>
         </section>
       {% endfor %}
