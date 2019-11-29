@@ -63,10 +63,24 @@
     font-size: 22px;
     padding: 40px;
     background: linear-gradient(to right, #ca9e74, #c9926d);
-    width: 25%;
+    //width: 25%;
+    overflow:hidden;
+    white-space:nowrap;
+    z-index: 110;
     position: absolute;
     bottom: 10%;
     right: 10%;
+    transition: all 300ms ease;
+
+    &--normal {
+
+    }
+
+    &--hidden {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__document {
