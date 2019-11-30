@@ -58,6 +58,12 @@
   &__slider-item {
     position: relative;
 
+    a {
+      img {
+        height: 500px;
+      }
+    }
+
     &:hover {
       img.victims-page__slider-item-background {
         display: block;
