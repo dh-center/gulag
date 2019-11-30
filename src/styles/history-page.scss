@@ -25,13 +25,14 @@
       background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
     }
   }
-
+ 
   &__year-item {
     position: relative;
     padding-left: 30px;
     font-weight: 700;
     font-size: 36px;
     color: #ca9f75;
+    cursor: pointer;
 
     &::before {
       position: absolute;

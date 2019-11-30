@@ -5,6 +5,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-image: url('/img/deportation-page/map-bg-1.png');
+  background-size: cover;
 
   &__sliders-wrap {
     transition: transform 500ms ease;
@@ -22,8 +24,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('/img/deportation-page/map-bg-1.png');
-    background-size: cover;
+    background-image: none;
   }
 }
 
@@ -40,15 +41,25 @@
     font-size: 28px;
     padding: 40px;
     background: linear-gradient(to right, #ca9e74, #c9926d);
-    width: 100%;
+    overflow:hidden;
+    white-space:nowrap;
     position: absolute;
+    transition: all 500ms ease;
     top: 0;
     right: -70%;
+
+    &--hidden {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
 .deportation-map {
   width: 100%;
+  position: relative;
+  z-index: 100;
 
   &__wrapper {
     width: 70%;
@@ -60,17 +71,48 @@
     font-size: 22px;
     padding: 40px;
     background: linear-gradient(to right, #ca9e74, #c9926d);
-    width: 25%;
+    overflow:hidden;
+    white-space:nowrap;
+    z-index: 110;
     position: absolute;
     bottom: 10%;
     right: 10%;
+    transition: all 300ms ease;
+
+    &--hidden {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__document {
+    display: block;
     position: absolute;
-    left: 35%;
-    top: 20%;
+    transition-property: top, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
     width: 20%;
+
+    &--not-visible {
+      visibility: hidden;
+    }
+
+    &--normal {
+      left: 27%;
+      top: 4%;
+    }
+
+    &--hidden-top {
+      top: 0;
+      left: 27%;
+      transform: translateY(-100%);
+    }
+
+    &--hidden-bottom {
+      left: 27%;
+      top: 100%;
+    }
   }
 }
 
@@ -92,13 +134,22 @@
 
 .calendar {
   position: absolute;
-  left: -2%;
-  bottom: -2%;
+  left: 0;
+  bottom: 0;
   width: 30%;
   background: url('/img/deportation-page/calendar-bg.png');
   background-size: cover;
+  transition: transform 500ms ease;
 
   &__photo {
     width: 100%;
+  }
+
+  &--hidden {
+    transform: translateY(100%);
+  }
+
+  &--not-visible {
+    visibility: hidden;
   }
 }
