@@ -24,7 +24,7 @@ $('.victims-page__slider').slick({
   swipe: true,
   arrows: true,
   infinite: true,
-  autoplay: true,
+  // autoplay: true,
   autoplaySpeed: 2000,
   speed: 800,
   slidesToShow: 3,
