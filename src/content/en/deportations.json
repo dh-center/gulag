@@ -1,0 +1,29 @@
+{
+  "firstSlide": {
+    "text": [
+      "Deportation of people during the Second World War plays exceptional role in the history of the punitive system of the USSR.",
+      "- Forced deportation is a type of punishment used in the USSR from the very beginning of its existence. The penalty is forced expulsion to a remote area, which differs tremendously from the residence of the expelled person.",
+      "- Various groups of citizens were subjected to a deportation in the USSR. Often entire nationalities were expelled, because they somehow did not please the top management.",
+      "- The deportation peaked during the Second World War."
+    ]
+  },
+  "secondSlide": {
+    "text": [
+      "The Decree of the Presidium of the USSR armed forces<br>\"On the resettlement of Germans living in the Volga region.\""
+    ],
+    "calendarImg": "/img/deportation-page/calendar-28-en.png",
+    "mapImg": "/img/deportation-page/map-en.png"
+  },
+  "thirdSlide": {
+    "text": [
+      "The Resolution of the Council<br>of People's Commissars of the USSR<br>\"On the legal status of special settlers\" was adopted."
+    ],
+    "calendarImg": "/img/deportation-page/calendar-8-en.png"
+  },
+  "fourthSlide": {
+    "text": [
+      "In total, more than 2,000,000 people were evicted during the war.",
+      "These are thousands of families who had been left to survive in completely new and harsh living conditions. There were thousands of broken lives, thousands of abandoned children."
+    ]
+  }
+}
