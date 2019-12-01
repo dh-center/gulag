@@ -6,24 +6,11 @@
     <div class="deportation-page__sliders-wrap">
       <div class="deportation-page__slide slide1">
         <div class="deportation-page__text-block">
+          {% for text in deportations.firstSlide.text %}
           <p>
-            Депортация народов во времена ВОВ занимает особое место
-            в истории карательной системы СССР.
+            {{ text }}
           </p>
-          <p>
-            - Принудительная депортация- вид наказания, применявшийся в СССР
-            с самого начала его существования. Наказание заключается в
-            принудительной выссылке в отдаленную местность, не характерную
-            для проживания высылаемого лица.
-          </p>
-          <p>
-            - Депортации в СССР подвергались самые разные группы граждан.
-            Зачастую выссылались целые народности, которые каким-то образом
-            не угодили высшему руководству.
-          </p>
-          <p>
-            - Пик депортации пришелся на Великую Отечественную Войну.
-          </p>
+          {% endfor %}
         </div>
       </div>
       <div class="deportation-page__slide slide2">
@@ -36,7 +23,7 @@
           >
           <img src="/img/deportation-page/map.png" alt="Карта" class="deportation-map">
           <div class="deportation-map__text">
-            Принят Указ Президиума ВС СССР <br>«О переселении немцев, проживающих <br> в районах Поволжья»
+            {{ deportations.secondSlide.text[0] }}
           </div>
         </div>
       </div>
@@ -46,20 +33,18 @@
         </div>
         <div class="deportation-document__wrapper">
           <img class="deportation-document" src="/img/deportation-page/document-photo.png">
-          <div class="deportation-document__text">Было принято Постановление <br> Совета Народных Комиссаров СССР <br>
-            «О правовом положении спецпереселенцев»
+          <div class="deportation-document__text">
+            {{ deportations.thirdSlide.text[0] }}
           </div>
         </div>
       </div>
       <div class="deportation-page__slide slide4">
         <div class="deportation-page__text-block">
+          {% for text in deportations.fourthSlide.text %}
           <p>
-            Всего за годы войны было выселено более 2.000.000 человек.
+            {{ text }}
           </p>
-          <p>
-            Это тысячи семей, которые были брошены выживать в совершенно новых и суровых
-            условиях жизни. Тысячи поломанных судеб, тысячи брошенных детей.
-          </p>
+          {% endfor %}
         </div>
       </div>
     </div>
