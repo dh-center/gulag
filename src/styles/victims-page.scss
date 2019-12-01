@@ -41,7 +41,7 @@
     color: #fff;
     line-height: 1.2;
     text-align: right;
-    word-spacing: 100px;
+    word-spacing: 1000px;
   }
 
 
@@ -57,6 +57,12 @@
 
   &__slider-item {
     position: relative;
+
+    a {
+      img {
+        height: 500px;
+      }
+    }
 
     &:hover {
       img.victims-page__slider-item-background {

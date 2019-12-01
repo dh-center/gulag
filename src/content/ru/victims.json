@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Никитин Василий Ильич",
+    "photo": "/img/victims-page/victims/nikitin_vasily_ilyich.png",
+    "link": "/history-page"
+  },
+  {
+    "name": "Раимонд Каугвер",
+    "photo": "/img/victims-page/victims/raimond_kaugver.png",
+    "link": "#"
+  },
+  {
+    "name": "Томечка Франц Адольфович",
+    "photo": "/img/victims-page/victims/tomechka_franz_adolfovich.png",
+    "link": "#"
+  },
+  {
+    "name": "Зимин Борис Николаевич",
+    "photo": "/img/victims-page/victims/zimin_boris_nikolaevich.png",
+    "link": "#"
+  },
+  {
+    "name": "Нагинская Фрина Иоилевна",
+    "photo": "/img/victims-page/victims/naginskaja_frina_ioilevna.png",
+    "link": "#"
+  }
+]

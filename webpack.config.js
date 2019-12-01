@@ -11,12 +11,14 @@ const contentDataset = {
   ru: {
     periodsInfo: require('./src/content/ru/periodsInfo'),
     dict: require('./src/content/ru/dict'),
-    history: require('./src/content/ru/history')
+    history: require('./src/content/ru/history'),
+    victims: require('./src/content/ru/victims')
   },
   en: {
     periodsInfo: require('./src/content/en/periodsInfo'),
     dict: require('./src/content/en/dict'),
-    history: require('./src/content/en/history')
+    history: require('./src/content/en/history'),
+    victims: require('./src/content/en/victims')
   }
 };
 
