@@ -12,13 +12,15 @@ const contentDataset = {
     periodsInfo: require('./src/content/ru/periodsInfo'),
     dict: require('./src/content/ru/dict'),
     history: require('./src/content/ru/history'),
-    victims: require('./src/content/ru/victims')
+    victims: require('./src/content/ru/victims'),
+    kaugver: require('./src/content/ru/raimond-kaugver-history')
   },
   en: {
     periodsInfo: require('./src/content/en/periodsInfo'),
     dict: require('./src/content/en/dict'),
     history: require('./src/content/en/history'),
-    victims: require('./src/content/en/victims')
+    victims: require('./src/content/en/victims'),
+    kaugver: require('./src/content/en/raimond-kaugver-history')
   }
 };
 

@@ -1,55 +1,10 @@
 @import "./base";
 @import "../fonts/Bravo/fonts.css";
 
-.history-page {
+.raimond-kaugver-history-page {
   width: 100%;
   height: 100%;
   overflow: hidden;
-
-  &__years {
-    position: absolute;
-    top: 0;
-    left: 100px;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      content: '';
-      width: 18px;
-      height: 100%;
-      background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
-    }
-  }
- 
-  &__year-item {
-    position: relative;
-    padding-left: 30px;
-    font-weight: 700;
-    font-size: 36px;
-    color: #ca9f75;
-    cursor: pointer;
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -30px;
-      content: '';
-      width: 30px;
-      height: 18px;
-      background: linear-gradient(to bottom, #ca9f75, #bf5f4b);
-    }
-
-    &--active {
-      font-size: 45px;
-      text-decoration: underline;
-    }
-  }
 
   &__sliders-wrap {
     transition: transform 500ms ease;
@@ -114,149 +69,128 @@
   }
 }
 
-.slide1 {
-  background-image: url('/img/history-page/history-bg-1.jpg');
+.raimond-kaugver-history-page {
 
-  &__image1 {
-    height: 45%;
-    transform: translate(92%, -87%) rotate(4deg);
+  .slide1 {
+    background-image: url('/img/raimond-kaugver-history/bg-1.jpg');
 
-    &.slide-image--hover-triggered:hover {
-      transform: translate(92%, -87%) scale(1.1);
+    &__text-wrapper {
+      background-image: url('/img/raimond-kaugver-history/page-with-title.png');
+      padding-top: 160px;
     }
-  }
 
-  &__image2 {
-    height: 45%;
-    transform: translate(28%, -17%) rotate(-3deg);
+    &__image1 {
+      height: 45%;
+      transform: translate(35%, -56%) rotate(4deg);
 
-    &.slide-image--hover-triggered:hover {
-      transform: translate(28%, -17%) scale(1.1);
+      &.slide-image--hover-triggered:hover {
+        transform: translate(35%, -56%) scale(1.1);
+      }
     }
+
   }
 
-  &__header {
-    font-family: 'BravoSC';
-    font-size: 30px;
-    line-height: 1.1;
-    margin-bottom: 15px;
-  }
+  .slide2 {
+    background-image: url('/img/raimond-kaugver-history/bg-2.jpg');
 
-  &__avatar {
-    position: absolute;
-    width: 100px;
-    height: auto;
-    top: 15px;
-    left: 65%;
-    transition: all 150ms ease-in;
+    &__image-right {
+      transform: translate(69%, -60%) rotate(10deg);
+      height: 60%;
 
-    &:hover {
-      transform: scale(1.7);
-    }
-  }
-}
-
-.slide2 {
-  background-image: url('/img/history-page/history-bg-2.jpg');
-
-  &__image-right {
-    transform: translate(19%, -20%) rotate(10deg);
-
-    &.slide-image--hover-triggered:hover {
-      transform: translate(19%, -20%) scale(1.1);
-    }
-  }
-}
-
-.slide3 {
-  background-image: url('/img/history-page/history-bg-3.jpg');
-
-  &__image1 {
-    height: 45%;
-    transform: translate(35%, -98%);
-
-    &.slide-image--hover-triggered:hover {
-      transform: translate(35%, -98%) scale(1.1);
-    }
-  }
-
-  &__image2 {
-    height: 45%;
-    transform: translate(55%, -17%) rotate(9deg);
-
-    &.slide-image--hover-triggered:hover {
-      transform: translate(55%, -17%) scale(1.1);
-    }
-  }
-}
-
-.slide4 {
-  background-image: url('/img/history-page/history-bg-4.jpg');
-
-  &__image-right {
-    height: 45%;
-    transform: translate(47%, -47%) rotate(9deg);
-
-    &.slide-image--hover-triggered:hover {
-      transform: translate(47%, -47%) scale(1.1);
-    }
-  }
-}
-
-.slide5 {
-  background-image: url('/img/history-page/history-bg-5.jpg');
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__header {
-    font-family: 'BravoSC';
-    font-size: 30px;
-    padding: 10px 20px;
-    text-align: center;
-    background: linear-gradient(to right, #ca9e74, #c9926d);
-    margin: 10px 0;
-  }
-
-  &__image-wrapper {
-    min-height: 0;
-    height: 100%;
-    margin: 10px 20px;
-
-    img {
-      height: 100%;
-      transition: 150ms ease-in;
-
-      &:hover {
-        transform: scale(1.6);
+      &.slide-image--hover-triggered:hover {
+        transform: translate(69%, -60%) scale(1.1);
       }
     }
   }
-}
 
-.slide2, .slide4 {
-  &__image-right {
-    height: 50%;
-  }
-}
+  .slide3 {
+    background-image: url('/img/raimond-kaugver-history/bg-3.jpg');
 
-.slide-image {
-  will-change: height;
-  position: absolute;
-  transition: 200ms ease-in;
-  top: 50%;
-  left: 50%;
+    &__image1 {
+      height: 60%;
+      transform: translate(-174%, -44%) rotate(-19deg);
 
-  &--active {
-    z-index: 100;
-    height: 100%;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-  }
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-174%, -44%) scale(1.1);
+      }
+    }
 
-  &--hover-triggered {
-    &:hover {
-      cursor: pointer;
+    &__image2 {
+      height: 60%;
+      transform: translate(65%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(65%, -47%) scale(1.1);
+      }
     }
   }
+
+  .slide4 {
+    background-image: url('/img/raimond-kaugver-history/bg-4.jpg');
+
+    &__image1 {
+      height: 60%;
+      transform: translate(-147%, -44%) rotate(-19deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-147%, -44%) scale(1.1);
+      }
+    }
+
+    &__image2 {
+      height: 60%;
+      transform: translate(45%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(45%, -47%) scale(1.1);
+      }
+    }
+  }
+
+  .slide5 {
+    background-image: url('/img/raimond-kaugver-history/bg-5.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image1 {
+      height: 60%;
+      transform: translate(-174%, -44%) rotate(-19deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-174%, -44%) scale(1.1);
+      }
+    }
+
+    &__image2 {
+      height: 50%;
+      transform: translate(24%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(24%, -47%) scale(1.1);
+      }
+    }
+  }
+
+  .slide-image {
+    will-change: height;
+    position: absolute;
+    transition: 200ms ease-in;
+    top: 50%;
+    left: 50%;
+
+    &--active {
+      z-index: 100;
+      height: 100%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    &--hover-triggered {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
 }

@@ -58,8 +58,8 @@ $('.history-page__year-item').on('click', goToSlide)
 
 $(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
 
-$('.slide-image').addClass('slide-image--hover-triggered');
-$('.slide-image').click(function () {
+$('.history-page .slide-image').addClass('slide-image--hover-triggered');
+$('.history-page .slide-image').click(function () {
   const jq = $(this);
 
   if (!jq.hasClass('slide-image--active')) {
@@ -71,8 +71,8 @@ $('.slide-image').click(function () {
   jq.toggleClass('slide-image--active slide-image--hover-triggered');
 });
 
-$('.text-on-paper').addClass('text-on-paper--hover-triggered');
-$('.text-on-paper').click(function () {
+$('.history-page .text-on-paper').addClass('text-on-paper--hover-triggered');
+$('.history-page .text-on-paper').click(function () {
   $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
 });
 
