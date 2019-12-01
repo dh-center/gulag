@@ -10,12 +10,15 @@
   "secondSlide": {
     "text": [
       "Принят Указ Президиума ВС СССР<br>«О переселении немцев, проживающих в районах Поволжья»"
-    ]
+    ],
+    "calendarImg": "/img/deportation-page/calendar-28.png",
+    "mapImg": "/img/deportation-page/map.png"
   },
   "thirdSlide": {
     "text": [
       "Принято Постановление<br>Совета Народных Комиссаров СССР<br>«О правовом положении спецпереселенцев»"
-    ]
+    ],
+    "calendarImg": "/img/deportation-page/calendar-8.png"
   },
   "fourthSlide": {
     "text": [

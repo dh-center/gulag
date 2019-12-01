@@ -15,13 +15,13 @@
       </div>
       <div class="deportation-page__slide slide2">
         <div class="calendar" id="calendar28">
-          <img src="/img/deportation-page/calendar-28.png" alt="" class="calendar__photo">
+          <img src="{{ deportations.secondSlide.calendarImg }}" alt="" class="calendar__photo">
         </div>
         <div class="deportation-map__wrapper">
           <img src="/img/deportation-page/map-document.png" alt=""
                class="deportation-map__document deportation-map__document--hidden-top deportation-map__document--not-visible"
           >
-          <img src="/img/deportation-page/map.png" alt="Карта" class="deportation-map">
+          <img src="{{ deportations.secondSlide.mapImg }}" alt="Карта" class="deportation-map">
           <div class="deportation-map__text">
             {{ deportations.secondSlide.text[0] }}
           </div>
@@ -29,7 +29,7 @@
       </div>
       <div class="deportation-page__slide slide3">
         <div class="calendar" id="calendar8">
-          <img src="/img/deportation-page/calendar-8.png" alt="" class="calendar__photo">
+          <img src="{{ deportations.thirdSlide.calendarImg }}" alt="" class="calendar__photo">
         </div>
         <div class="deportation-document__wrapper">
           <img class="deportation-document" src="/img/deportation-page/document-photo.png">
