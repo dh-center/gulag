@@ -1,0 +1,69 @@
+{% extends './layout.twig' %}
+
+
+
+{% block content %}
+  <main class="history-page">
+    <ul class="history-page__years">
+      {% for index, item in history.periods %}
+        <li id="{{ index + 1 }}"
+          {% if index == 0 %}
+            class="history-page__year-item history-page__year-item--active"
+          {% else %}
+            class="history-page__year-item"
+          {% endif %}
+        >
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="history-page__sliders-wrap">
+      <div class="history-page__slide slide1">
+        <img class="slide-image slide1__image1" src="/img/history-page/history-img-1-1.png">
+        <img class="slide-image slide1__image2" src="/img/history-page/history-img-1-2.png">
+        <div class="text-on-paper slide1__text-wrapper">
+          <img class="slide1__avatar" src="/img/history-page/history-avatar.png" alt="">
+          <h3 class="slide1__header">
+            {{ history.firstSlide.header|join('<br>') }}
+          </h3>
+          {% for text in history.firstSlide.text %}
+            <p>{{ text }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="history-page__slide slide2">
+        <img class="slide2__image-right slide-image" src="/img/history-page/history-img-2.png" alt="">
+        <div class="slide2__text-wrapper text-on-paper">
+          {% for text in history.secondSlide.text %}
+            <p>{{ text }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="history-page__slide slide3">
+        <img class="slide3__image1 slide-image" src="/img/history-page/history-img-3-1.png" alt="">
+        <img class="slide3__image2 slide-image" src="/img/history-page/history-img-3-2.png" alt="">
+        <div class="slide3__text-wrapper text-on-paper">
+          {% for text in history.thirdSlide.text %}
+            <p>{{ text }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="history-page__slide slide4">
+        <img class="slide4__image-right slide-image" src="/img/history-page/history-img-4.png" alt="">
+        <div class="slide4__text-wrapper text-on-paper">
+          {% for text in history.fourthSlide.text %}
+            <p>{{ text }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="history-page__slide slide5">
+        <div class="slide5__header">
+          {{ history.fifthSlide.text|join('<br>') }}
+        </div>
+        <div class="slide5__image-wrapper">
+          <img src="/img/history-page/history-last-1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

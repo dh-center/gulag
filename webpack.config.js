@@ -27,6 +27,7 @@ const pages = [
   'history-page',
   'periods-page',
   'victims-page',
+  'raimond-kaugver-history',
   'deportation-page'
 ];
 
