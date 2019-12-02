@@ -4,6 +4,19 @@
 
 {% block content %}
   <main class="raimond-kaugver-history-page">
+    <ul class="raimond-kaugver-history-page__years">
+      {% for index, item in kaugver.periods %}
+        <li id="{{ index + 1 }}"
+          {% if index == 0 %}
+            class="raimond-kaugver-history-page__year-item raimond-kaugver-history-page__year-item--active"
+          {% else %}
+            class="raimond-kaugver-history-page__year-item"
+          {% endif %}
+        >
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
     <div class="raimond-kaugver-history-page__sliders-wrap">
       <div class="raimond-kaugver-history-page__slide kaugver-slide1">
         <img class="slide-image kaugver-slide1__image1" src="/img/raimond-kaugver-history/main-photo.jpg">

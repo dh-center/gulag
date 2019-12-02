@@ -17,7 +17,23 @@ function changeSlideOnMouseWheel(event) {
   } else {
     previousSlide();
   }
+
+  /**
+   * Change current year in left menu
+   */
+  $(".raimond-kaugver-history-page__year-item").removeClass('raimond-kaugver-history-page__year-item--active');
+  $(".raimond-kaugver-history-page__year-item[id='" + currentSlide + "']").addClass('raimond-kaugver-history-page__year-item--active');
 }
+
+function goToSlide(event) {
+  currentSlide = event.target.id;
+  $(".raimond-kaugver-history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+  $(".raimond-kaugver-history-page__year-item").removeClass('raimond-kaugver-history-page__year-item--active');
+  $(".raimond-kaugver-history-page__year-item[id='" + event.target.id + "']").addClass('raimond-kaugver-history-page__year-item--active');
+}
+
+$('.raimond-kaugver-history-page__year-item').on('click', goToSlide);
+
 
 /**
  * Goes to next slide
