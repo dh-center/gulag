@@ -1,0 +1,183 @@
+@import "./base";
+@import "../fonts/Bravo/fonts.css";
+
+.raimond-kaugver-history-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__sliders-wrap {
+    transition: transform 500ms ease;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+  }
+
+
+  .text-on-paper p {
+    font-family: 'Adobe Handwriting';
+    line-height: 1.11;
+    font-size: 20px;
+  }
+}
+
+
+.kaugver-slide1, .kaugver-slide2, .kaugver-slide3, .kaugver-slide4, .kaugver-slide5 {
+  &__text-wrapper {
+    top: 50%;
+    position: absolute;
+    height: 90%;
+    left: 50%;
+    width: 500px;
+    transition: 150ms ease;
+    padding: 50px 60px 41px 50px;
+
+    & p {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.1;
+      font-family: $caveat;
+    }
+  }
+
+  &__image-right {
+    height: 95%;
+    transform: translateY(-50%);
+
+    &--center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.raimond-kaugver-history-page {
+
+  .kaugver-slide1 {
+    background-image: url('/img/raimond-kaugver-history/bg-1.jpg');
+
+    &__text-wrapper {
+      background-image: url('/img/raimond-kaugver-history/page-with-title.png');
+      padding-top: 12%;
+      padding-left: 66px;
+    }
+
+    &__image1 {
+      height: 45%;
+      transform: translate(35%, -56%) rotate(4deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(35%, -56%) scale(1.1);
+      }
+    }
+
+  }
+
+  .kaugver-slide2 {
+    background-image: url('/img/raimond-kaugver-history/bg-2.jpg');
+
+    &__image-right {
+      transform: translate(69%, -60%) rotate(10deg);
+      height: 60%;
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(69%, -60%) scale(1.1);
+      }
+    }
+  }
+
+  .kaugver-slide3 {
+    background-image: url('/img/raimond-kaugver-history/bg-3.jpg');
+
+    &__image1 {
+      height: 60%;
+      transform: translate(-174%, -44%) rotate(-19deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-174%, -44%) scale(1.1);
+      }
+    }
+
+    &__image2 {
+      height: 60%;
+      transform: translate(65%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(65%, -47%) scale(1.1);
+      }
+    }
+  }
+
+  .kaugver-slide4 {
+    background-image: url('/img/raimond-kaugver-history/bg-4.jpg');
+
+    &__image1 {
+      height: 60%;
+      transform: translate(-147%, -44%) rotate(-19deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-147%, -44%) scale(1.1);
+      }
+    }
+
+    &__image2 {
+      height: 60%;
+      transform: translate(45%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(45%, -47%) scale(1.1);
+      }
+    }
+  }
+
+  .kaugver-slide5 {
+    background-image: url('/img/raimond-kaugver-history/bg-5.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image1 {
+      height: 60%;
+      transform: translate(-174%, -44%) rotate(-19deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(-174%, -44%) scale(1.1);
+      }
+    }
+
+    &__image2 {
+      height: 50%;
+      transform: translate(24%, -47%) rotate(9deg);
+
+      &.slide-image--hover-triggered:hover {
+        transform: translate(24%, -47%) scale(1.1);
+      }
+    }
+  }
+
+  .slide-image {
+    will-change: height;
+    position: absolute;
+    transition: 200ms ease-in;
+    top: 50%;
+    left: 50%;
+
+    &--active {
+      z-index: 100;
+      height: 100%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    &--hover-triggered {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+}

@@ -1,7 +1,7 @@
 import debounce from './debounce';
 import throttle from './throttle';
 
-const slidesCount = $('.history-page__slide').length;
+const slidesCount = $('.raimond-kaugver-history-page__slide').length;
 let currentSlide = 1;
 let windowHeight = $(window).height();
 
@@ -17,12 +17,6 @@ function changeSlideOnMouseWheel(event) {
   } else {
     previousSlide();
   }
-
-  /**
-   * Change current year in left menu
-   */
-  $(".history-page__year-item").removeClass('history-page__year-item--active');
-  $(".history-page__year-item[id='" + currentSlide + "']").addClass('history-page__year-item--active');
 }
 
 /**
@@ -32,7 +26,7 @@ function nextSlide() {
   const canGoNext = currentSlide >= 1 && currentSlide <= slidesCount - 1;
   if (canGoNext) {
     currentSlide++;
-    $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+    $(".raimond-kaugver-history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
   }
 }
 
@@ -43,25 +37,15 @@ function previousSlide() {
   const canGoPrevious = currentSlide >= 2 && currentSlide <= slidesCount;
   if (canGoPrevious) {
     currentSlide--;
-    $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+    $(".raimond-kaugver-history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
   }
 }
 
-function goToSlide(event) {
-  currentSlide = event.target.id;
-  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
-  $(".history-page__year-item").removeClass('history-page__year-item--active');
-  $(".history-page__year-item[id='" + event.target.id + "']").addClass('history-page__year-item--active');
-}
-
-$('.history-page__year-item').on('click', goToSlide)
-
 $(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
 
-$('.history-page .slide-image').addClass('slide-image--hover-triggered');
-$('.history-page .slide-image').click(function () {
+$('.raimond-kaugver-history-page .slide-image').addClass('slide-image--hover-triggered');
+$('.raimond-kaugver-history-page .slide-image').click(function () {
   const jq = $(this);
-
   if (!jq.hasClass('slide-image--active')) {
     $('.slide-image--active')
       .removeClass('slide-image--active')
@@ -71,8 +55,8 @@ $('.history-page .slide-image').click(function () {
   jq.toggleClass('slide-image--active slide-image--hover-triggered');
 });
 
-$('.history-page .text-on-paper').addClass('text-on-paper--hover-triggered');
-$('.history-page .text-on-paper').click(function () {
+$('.raimond-kaugver-history-page .text-on-paper').addClass('text-on-paper--hover-triggered');
+$('.raimond-kaugver-history-page .text-on-paper').click(function () {
   $(this).toggleClass('text-on-paper--active text-on-paper--hover-triggered');
 });
 
@@ -81,5 +65,5 @@ $('.history-page .text-on-paper').click(function () {
  */
 $(window).resize(throttle(function () {
   windowHeight = $(window).height();
-  $(".history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+  $(".raimond-kaugver-history-page__sliders-wrap").css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 }, 200));
