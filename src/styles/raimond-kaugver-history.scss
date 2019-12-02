@@ -26,7 +26,7 @@
 }
 
 
-.slide1, .slide2, .slide3, .slide4, .slide5 {
+.kaugver-slide1, .kaugver-slide2, .kaugver-slide3, .kaugver-slide4, .kaugver-slide5 {
   &__text-wrapper {
     top: 50%;
     position: absolute;
@@ -57,7 +57,7 @@
 
 .raimond-kaugver-history-page {
 
-  .slide1 {
+  .kaugver-slide1 {
     background-image: url('/img/raimond-kaugver-history/bg-1.jpg');
 
     &__text-wrapper {
@@ -77,7 +77,7 @@
 
   }
 
-  .slide2 {
+  .kaugver-slide2 {
     background-image: url('/img/raimond-kaugver-history/bg-2.jpg');
 
     &__image-right {
@@ -90,7 +90,7 @@
     }
   }
 
-  .slide3 {
+  .kaugver-slide3 {
     background-image: url('/img/raimond-kaugver-history/bg-3.jpg');
 
     &__image1 {
@@ -112,7 +112,7 @@
     }
   }
 
-  .slide4 {
+  .kaugver-slide4 {
     background-image: url('/img/raimond-kaugver-history/bg-4.jpg');
 
     &__image1 {
@@ -134,7 +134,7 @@
     }
   }
 
-  .slide5 {
+  .kaugver-slide5 {
     background-image: url('/img/raimond-kaugver-history/bg-5.jpg');
     display: flex;
     flex-direction: column;
