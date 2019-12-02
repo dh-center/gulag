@@ -171,6 +171,24 @@
   .kaugver-slide4 {
     background-image: url('/img/raimond-kaugver-history/bg-4.jpg');
 
+    &__text-wrapper {
+      padding-top: 150px;
+    }
+
+
+    &__sign {
+      position: absolute;
+      width: 220px;
+      height: auto;
+      top: 15px;
+      left: 40%;
+      transition: all 150ms ease-in;
+
+      &:hover {
+        transform: scale(1.7);
+      }
+    }
+
     &__image1 {
       height: 60%;
       transform: translate(-151%, -44%) rotate(-19deg);
@@ -188,10 +206,6 @@
         transform: translate(24%, -47%) scale(1.1);
       }
     }
-  }
-
-  .kaugver-slide5 {
-    background-image: url('/img/raimond-kaugver-history/bg-5.jpg');
   }
 
   .slide-image {
