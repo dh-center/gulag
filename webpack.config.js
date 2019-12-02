@@ -13,7 +13,7 @@ const contentDataset = {
     dict: require('./src/content/ru/dict'),
     history: require('./src/content/ru/history'),
     victims: require('./src/content/ru/victims'),
-    deportations: require('./src/content/ru/deportations')
+    deportations: require('./src/content/ru/deportations'),
     kaugver: require('./src/content/ru/raimond-kaugver-history')
   },
   en: {
@@ -21,7 +21,7 @@ const contentDataset = {
     dict: require('./src/content/en/dict'),
     history: require('./src/content/en/history'),
     victims: require('./src/content/en/victims'),
-    deportations: require('./src/content/en/deportations')
+    deportations: require('./src/content/en/deportations'),
     kaugver: require('./src/content/en/raimond-kaugver-history')
   }
 };
