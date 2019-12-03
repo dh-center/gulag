@@ -70,6 +70,24 @@
     color: rgba(0,0,0, 0.8);
     font-size: 20px;
   }
+
+  &__copyright {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: #828282;
+    font-size: 18px;
+    font-family: 'BravoSC';
+
+    a {
+      text-decoration: none;
+      color: #828282;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 
@@ -107,9 +125,13 @@
   .kaugver-slide1 {
     background-image: url('/img/raimond-kaugver-history/bg-1.jpg');
 
-    &__text-wrapper {
-      padding-top: 12%;
-      padding-left: 66px;
+    &__header {
+      font-family: 'BravoSC';
+      color: rgba(0,0,0, 0.9);
+      font-size: 35px;
+      line-height: 1.1;
+      text-align: center;
+      margin-bottom: 15px;
     }
 
     &__image1 {
