@@ -54,7 +54,7 @@ function goToSlide(event) {
   $(".history-page__year-item[id='" + event.target.id + "']").addClass('history-page__year-item--active');
 }
 
-$('.history-page__year-item').on('click', goToSlide)
+$('.history-page__year-item').on('click', goToSlide);
 
 $(window).on('wheel', debounce(changeSlideOnMouseWheel, 500));
 

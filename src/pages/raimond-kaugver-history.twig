@@ -4,16 +4,33 @@
 
 {% block content %}
   <main class="raimond-kaugver-history-page">
+    <ul class="raimond-kaugver-history-page__years">
+      {% for index, item in kaugver.periods %}
+        <li id="{{ index + 1 }}"
+          {% if index == 0 %}
+            class="raimond-kaugver-history-page__year-item raimond-kaugver-history-page__year-item--active"
+          {% else %}
+            class="raimond-kaugver-history-page__year-item"
+          {% endif %}
+        >
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
     <div class="raimond-kaugver-history-page__sliders-wrap">
       <div class="raimond-kaugver-history-page__slide kaugver-slide1">
         <img class="slide-image kaugver-slide1__image1" src="/img/raimond-kaugver-history/main-photo.jpg">
         <div class="text-on-paper kaugver-slide1__text-wrapper">
+          <h3 class="kaugver-slide1__header">
+            {{ kaugver.firstSlide.header|join('<br>') }}
+          </h3>
           {% for text in kaugver.firstSlide.text %}
             <p>{{ text }}</p>
           {% endfor %}
         </div>
       </div>
       <div class="raimond-kaugver-history-page__slide kaugver-slide2">
+        <img class="kaugver-slide2__image-left slide-image" src="/img/raimond-kaugver-history/book1.jpg" alt="">
         <img class="kaugver-slide2__image-right slide-image" src="/img/raimond-kaugver-history/diary1.png" alt="">
         <div class="kaugver-slide2__text-wrapper text-on-paper">
           {% for text in kaugver.secondSlide.text %}
@@ -22,8 +39,8 @@
         </div>
       </div>
       <div class="raimond-kaugver-history-page__slide kaugver-slide3">
-        <img class="kaugver-slide3__image1 slide-image" src="/img/raimond-kaugver-history/book1.jpg" alt="">
-        <img class="kaugver-slide3__image2 slide-image" src="/img/raimond-kaugver-history/book2.jpeg" alt="">
+        <img class="kaugver-slide3__image1 slide-image" src="/img/raimond-kaugver-history/diary2.png" alt="">
+        <img class="kaugver-slide3__image2 slide-image" src="/img/raimond-kaugver-history/diary3.png" alt="">
         <div class="kaugver-slide3__text-wrapper text-on-paper">
           {% for text in kaugver.thirdSlide.text %}
             <p>{{ text }}</p>
@@ -31,23 +48,18 @@
         </div>
       </div>
       <div class="raimond-kaugver-history-page__slide kaugver-slide4">
-        <img class="kaugver-slide4__image1 slide-image" src="/img/raimond-kaugver-history/diary2.png" alt="">
-        <img class="kaugver-slide4__image2 slide-image" src="/img/raimond-kaugver-history/diary3.jpg" alt="">
+        <img class="kaugver-slide4__image1 slide-image" src="/img/raimond-kaugver-history/slide5_image1.png" alt="">
+        <img class="kaugver-slide4__image2 slide-image" src="/img/raimond-kaugver-history/slide5_image2.png" alt="">
         <div class="kaugver-slide4__text-wrapper text-on-paper">
+          <img class="kaugver-slide4__sign" src="/img/raimond-kaugver-history/sign.png" alt="">
           {% for text in kaugver.fourthSlide.text %}
             <p>{{ text }}</p>
           {% endfor %}
         </div>
       </div>
-      <div class="raimond-kaugver-history-page__slide kaugver-slide5">
-        <img class="kaugver-slide5__image1 slide-image" src="/img/raimond-kaugver-history/slide5_image1.png" alt="">
-        <img class="kaugver-slide5__image2 slide-image" src="/img/raimond-kaugver-history/slide5_image2.png" alt="">
-        <div class="kaugver-slide5__text-wrapper text-on-paper">
-          {% for text in kaugver.fifthSlide.text %}
-            <p>{{ text }}</p>
-          {% endfor %}
-        </div>
-      </div>
+    </div>
+    <div class="raimond-kaugver-history-page__copyright">
+      {{ dict.copyright }} <a href="https://www.tallinn.ee/eng/arhiivindus/">www.tallinn.ee</a>
     </div>
   </main>
 {% endblock %}

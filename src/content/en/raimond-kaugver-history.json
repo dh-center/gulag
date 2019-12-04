@@ -1,29 +1,35 @@
 {
+  "periods": [
+    "Family Story",
+    "Finland",
+    "GULAG",
+    "Life after liberation"
+  ],
   "firstSlide": {
+    "header": [
+      "From the memories",
+      "of Raimond Kaugver"
+    ],
     "text": [
-      "I, Raymond Kaugver, was born on February 25, 1926 in Rakvere, Estonia. My father, Andres Kaugver, was a laborer on the manse(не уверена на счет этого слова, но вроде подходит) in Russia before the First Imperialist War till the day he was drafted into the tsarist army in 1914. After the war he settled in Estonia and worked in the Chancellery. My mother, Olga Kaugver, was a farm worker. She died in Rakvere after the liberation of the city (September 19, 1944) during an air attack carried out by Nazi troops."
+      "I, Raimond Kaugver, was born on February 25, 1926 in Rakvere, Estonia. My father, Andres Kaugver, was a laborer on the manor in Russia before the First Imperialist War till the day he was drafted into the tsarist army in 1914. After the war he settled in Estonia and worked in the Chancellery. My mother, Olga Kaugver, was a farm worker."
     ]
   },
   "secondSlide": {
     "text": [
-      "In 1943 I graduated from school and wanted to go to the University of Tartu to study medicine but this required passing the so-called \"training\" in Germany. I refused it and got a job as a laborer at the factory. I worked there until the end of February 1944, when the mobilization of people born in 1926 was announced. After the draft I was forced to stay in the Kehra training camp from March 1 to August 12 of 1944."
+      "I was fond of writing my whole life. A had a diary and also edited school paper. Once our school was visited by a professional writer, Juhan Jaik. I was introduced to him as a student who writes best essays. He assumed that maybe I too am born to be a writer.",
+      "I graduated from school in 1943. This year German occupation authorities were starting to mobilize young Estonians. To avoid being drafted, many people have ran away to Finland. I was one of them. In Finland they formed us into Infantry regiment 200, also known as Finnish Boys. I was a part of it for about a year, until I came back to my homeland in August 1944."
     ]
   },
   "thirdSlide": {
     "text": [
-      "When, in August, they began to sent us to the front I, like many others, fled to Finland and for some time took part in battles among the so-called \"Finnish guys\" - the Estonians who got away from the German mobilization and did not want to join the red army."
+      "In September of this year, Soviet authorities came to Estonia. I have managed to get a job as a teacher in elementary school of Mädapea, but I didn’t stay there for a long time. Soon they started to interrogate me. In December 1944 I was arrested and in March 1945 I was sentenced to 5 years in labor camp as a traitor to the motherland. I was barely 19 then."
     ]
   },
   "fourthSlide": {
     "text": [
-      "After the restoration of Soviet power in Estonia, I returned to my homeland. There, in December 1944, at the mobilization Commission of the armed forces, I told the story of my life and was sentenced to 5 years in prison in a correctional labor camp(или forced labor camp?) without the right to parole for “obeying the order of mobilization of the occupier”. At that time I was only 18.",
-      "I was sent to Vorkutlag. While there I trained as a paramedic and worked in the hospital Department. After liberation in 1949, I returned back to Estonia."]
-  },
-  "fifthSlide": {
-    "text": [
-      "In 1964 I became a professional writer. My bibliography includes 22 novels, five collections of short stories and one novella. My books were sold in huge numbers. I often spent a lot of  money that I earned on what is called a “bohemian lifestyle.\"",
+      "In 1964 I became a professional writer. My bibliography includes 23 novels and five collections of short stories. My books were sold in huge numbers. I often spent a lot of  money that I earned on what can be called a “bohemian lifestyle.\" ",
       "So it was, until my wife died before my eyes by an accident. I couldn't help her - I'd already had my leg amputated. After that I have never fully recovered. I died in 1992 after a long illness.",
-      "Some of my books - ” Forty Candles“,” Letters From the Camp“,” Northern Lights“,” Posthumously Rehabilitated \" - are devoted to life in the Gulag. All of them were published only many years after the creation, specifically \"Northern lights\" - 18 years after my death."
+      "Some of my books - “Forty Candles”, “Letters From the Camp”, “Northern Lights”, “Posthumously Rehabilitated” are devoted to life in the Gulag. All of them were published only many years after the creation, specifically \"Northern lights\" - 18 years after my death."
     ]
   }
 }
