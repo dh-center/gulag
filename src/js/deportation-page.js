@@ -5,7 +5,8 @@ const slidesCount = $('.deportation-page__slide').length;
 let currentSlide = 1;
 const windowHeight = $(window).height();
 
-const mapDocument = $(".deportation-map__document");
+const mapDocumentGermans = $("#deportation-map__document-germans");
+const mapDocumentLatvians = $("#deportation-map__document-latvians");
 const slidersWrap = $(".deportation-page__sliders-wrap");
 const mapText = $(".deportation-map__text");
 mapText.addClass('deportation-map__text--hidden');
@@ -17,6 +18,7 @@ const calendars = $('.calendar');
 calendars.addClass('calendar--hidden');
 
 const calendar28 = $('#calendar28');
+const calendar16 = $('#calendar16');
 const calendar8 = $('#calendar8');
 
 /**
@@ -45,10 +47,10 @@ async function nextSlide() {
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 
       await wait(500);
-      mapDocument.removeClass('deportation-map__document--not-visible');
+      mapDocumentGermans.removeClass('deportation-map__document--not-visible');
 
-      mapDocument.removeClass('deportation-map__document--hidden-top');
-      mapDocument.addClass('deportation-map__document--normal');
+      mapDocumentGermans.removeClass('deportation-map__document--hidden-top');
+      mapDocumentGermans.addClass('deportation-map__document--normal');
 
       mapText.removeClass('deportation-map__text--hidden');
       calendar28.removeClass('calendar--hidden');
@@ -56,23 +58,45 @@ async function nextSlide() {
     }
 
     if (currentSlide === 3) {
-      mapDocument.removeClass('deportation-map__document--normal');
-      mapDocument.addClass('deportation-map__document--hidden-bottom');
+      mapDocumentGermans.removeClass('deportation-map__document--normal');
+      mapDocumentGermans.addClass('deportation-map__document--hidden-bottom');
       mapText.addClass('deportation-map__text--hidden');
       calendar28.addClass('calendar--hidden');
-
       await wait(1000);
+
       calendar28.addClass('calendar--not-visible');
-      mapDocument.addClass('deportation-map__document--not-visible');
+      mapDocumentGermans.addClass('deportation-map__document--not-visible');
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
       await wait(500);
+
+      calendar16.removeClass('calendar--not-visible');
+      calendar16.removeClass('calendar--hidden');
+      mapDocumentLatvians.removeClass('deportation-map__document--not-visible');
+      mapDocumentLatvians.removeClass('deportation-map__document--hidden-top');
+      mapDocumentLatvians.addClass('deportation-map__document--normal');
+      mapText.removeClass('deportation-map__text--hidden');
+      return;
+    }
+
+    if (currentSlide === 4) {
+      mapDocumentLatvians.removeClass('deportation-map__document--normal');
+      mapDocumentLatvians.addClass('deportation-map__document--hidden-bottom');
+      mapText.addClass('deportation-map__text--hidden');
+      calendar16.addClass('calendar--hidden');
+      await wait(1000);
+
+      calendar16.addClass('calendar--not-visible');
+      mapDocumentLatvians.addClass('deportation-map__document--not-visible');
+      slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
+      await wait(500);
+
       calendar8.removeClass('calendar--not-visible');
       documentText.removeClass('deportation-document__text--hidden');
       calendar8.removeClass('calendar--hidden');
       return;
     }
 
-    if (currentSlide === 4) {
+    if (currentSlide === 5) {
       calendar8.addClass('calendar--hidden');
       documentText.addClass('deportation-document__text--hidden');
 
@@ -97,17 +121,37 @@ async function previousSlide() {
     currentSlide--;
 
     if (currentSlide === 1) {
-      mapDocument.addClass('deportation-map__document--hidden-top');
+      mapDocumentGermans.addClass('deportation-map__document--hidden-top');
       mapText.addClass('deportation-map__text--hidden');
       calendar28.addClass('calendar--hidden');
       await wait(1000);
 
       calendar28.addClass('calendar--not-visible');
-      mapDocument.addClass('deportation-map__document--not-visible');
+      mapDocumentGermans.addClass('deportation-map__document--not-visible');
       mapText.addClass('deportation-map__text--hidden')
     }
 
     if (currentSlide === 2) {
+      mapDocumentLatvians.addClass('deportation-map__document--hidden-top');
+      mapText.addClass('deportation-map__text--hidden');
+      calendar16.addClass('calendar--hidden');
+      await wait(1000);
+
+      calendar16.addClass('calendar--not-visible');
+      mapDocumentLatvians.addClass('deportation-map__document--not-visible');
+      mapText.addClass('deportation-map__text--hidden')
+
+      await wait(500);
+      mapDocumentGermans.removeClass('deportation-map__document--not-visible');
+
+      mapDocumentGermans.removeClass('deportation-map__document--hidden-bottom');
+      mapDocumentGermans.addClass('deportation-map__document--normal');
+      mapText.removeClass('deportation-map__text--hidden');
+      calendar28.removeClass('calendar--not-visible');
+      calendar28.removeClass('calendar--hidden');
+    }
+
+    if (currentSlide === 3) {
       calendar8.addClass('calendar--hidden');
       documentText.addClass('deportation-document__text--hidden');
 
@@ -116,16 +160,16 @@ async function previousSlide() {
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 
       await wait(500);
-      mapDocument.removeClass('deportation-map__document--not-visible');
+      mapDocumentLatvians.removeClass('deportation-map__document--not-visible');
 
-      mapDocument.removeClass('deportation-map__document--hidden-bottom');
-      mapDocument.addClass('deportation-map__document--normal');
+      mapDocumentLatvians.removeClass('deportation-map__document--hidden-bottom');
+      mapDocumentLatvians.addClass('deportation-map__document--normal');
       mapText.removeClass('deportation-map__text--hidden');
-      calendar28.removeClass('calendar--not-visible');
-      calendar28.removeClass('calendar--hidden');
+      calendar16.removeClass('calendar--not-visible');
+      calendar16.removeClass('calendar--hidden');
     }
 
-    if (currentSlide === 3) {
+    if (currentSlide === 4) {
       slidersWrap.css('transform', `translateY(-${windowHeight * (currentSlide - 1)}px)`);
 
       await wait(500);
