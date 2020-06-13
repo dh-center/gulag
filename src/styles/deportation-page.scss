@@ -115,20 +115,51 @@
       top: 100%;
     }
   }
+
+  &__video {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    transition-property: top, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+    &--normal {
+      right: 10%;
+      top: 10%;
+    }
+
+    &--hidden-top {
+      top: 0;
+      right: 10%;
+      transform: translateY(-100%);
+    }
+
+    &--hidden-bottom {
+      right: 10%;
+      top: 100%;
+    }
+
+    &--not-visible {
+      visibility: hidden;
+    }
+  }
 }
 
 .deportation-page__sliders-wrap {
   .slide1,
   .slide2,
   .slide3,
-  .slide4 {
+  .slide4,
+  .slide5 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .slide2 {
+  .slide2,
+  .slide3 {
     align-items: flex-end;
   }
 }

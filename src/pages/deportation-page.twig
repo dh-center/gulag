@@ -1,5 +1,4 @@
 {% extends './layout.twig' %}
-поч
 
 {% block content %}
   <main class="deportation-page">
@@ -18,7 +17,7 @@
           <img src="{{ deportations.secondSlide.calendarImg }}" alt="" class="calendar__photo">
         </div>
         <div class="deportation-map__wrapper">
-          <img src="/img/deportation-page/map-document.png" alt=""
+          <img src="/img/deportation-page/map-document.png" alt="" id="deportation-map__document-germans"
                class="deportation-map__document deportation-map__document--hidden-top deportation-map__document--not-visible"
           >
           <img src="{{ deportations.secondSlide.mapImg }}" alt="Карта" class="deportation-map">
@@ -28,19 +27,36 @@
         </div>
       </div>
       <div class="deportation-page__slide slide3">
-        <div class="calendar" id="calendar8">
+        <div class="calendar" id="calendar16">
           <img src="{{ deportations.thirdSlide.calendarImg }}" alt="" class="calendar__photo">
         </div>
-        <div class="deportation-document__wrapper">
-          <img class="deportation-document" src="/img/deportation-page/document-photo.png">
-          <div class="deportation-document__text">
+        <div class="deportation-map__wrapper">
+          <img src="/img/deportation-page/map-document-latvians.png" alt="" id="deportation-map__document-latvians"
+               class="deportation-map__document deportation-map__document--hidden-top deportation-map__document--not-visible"
+          >
+          <img src="{{ deportations.thirdSlide.mapImg }}" alt="Карта" class="deportation-map">
+          <div class="deportation-map__text">
             {{ deportations.thirdSlide.text[0] }}
+          </div>
+          <div class="deportation-map__video deportation-map__video--hidden-top deportation-map__video--not-visible">
+            <iframe width="373" height="210" src="https://www.youtube.com/embed/WtK4z0f-TG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
       <div class="deportation-page__slide slide4">
+        <div class="calendar" id="calendar8">
+          <img src="{{ deportations.fourthSlide.calendarImg }}" alt="" class="calendar__photo">
+        </div>
+        <div class="deportation-document__wrapper">
+          <img class="deportation-document" src="/img/deportation-page/document-photo.png">
+          <div class="deportation-document__text">
+            {{ deportations.fourthSlide.text[0] }}
+          </div>
+        </div>
+      </div>
+      <div class="deportation-page__slide slide5">
         <div class="deportation-page__text-block">
-          {% for text in deportations.fourthSlide.text %}
+          {% for text in deportations.fifthSlide.text %}
           <p>
             {{ text }}
           </p>

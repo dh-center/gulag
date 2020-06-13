@@ -81,39 +81,46 @@ module.exports = (env, args) => {
       $: "jquery",
       jQuery: "jquery"
     }),
-    new CopyWebpackPlugin([
-      {
-        from: './src/img/',
-        to: './img/',
-        test: /\.(png|jpg|gif)$/
-      }
-    ]),
-    new CopyWebpackPlugin([
-      {
-        from: './src/fonts/',
-        to: './fonts/',
-        test: /\.(svg|woff|woff2|ttf|eot)$/
-      }
-    ]),
-    new CopyWebpackPlugin([
-      {
-        from: './src/favicons/',
-        to: './favicons/',
-        test: /\.(png|ico)$/
-      }
-    ]),
-    new CopyWebpackPlugin([
-      {
-        from: './src/browserconfig.xml',
-        to: './browserconfig.xml',
-      }
-    ]),
-    new CopyWebpackPlugin([
-      {
-        from: './src/site.webmanifest',
-        to: './site.webmanifest',
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/img/',
+          to: './img/'
+        }
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/fonts/',
+          to: './fonts/'
+        }
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/favicons/',
+          to: './favicons/'
+        }
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/browserconfig.xml',
+          to: './browserconfig.xml',
+        }
+      ]
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/site.webmanifest',
+          to: './site.webmanifest',
+        }
+      ]
+    })
   ];
 
   return {
